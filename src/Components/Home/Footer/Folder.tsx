@@ -8,9 +8,9 @@ const Footer = () => {
     <Container>
       <Wrapper>
         <AbtBag>
-          <Logo>LIFECARE.</Logo>
+          <Logo>LYFECARE.</Logo>
           <Text>
-            LIFECARE is founded with the passion to safe lives, eliminating the excuse of no money in the case of health emergency
+            LIFECARE is founded with the passion to safe lives, eliminating the excuse of no money in the case of health emergency.
           </Text>
           <Icn>
             <AiOutlinePhone />
@@ -22,7 +22,7 @@ const Footer = () => {
             <Number>lifecare428@gmail.com</Number>
           </Icn>
 
-          <button style={{color: "black"}}>Get Started</button>
+          <button style={{color: "white"}}>Get Started</button>
         </AbtBag>
 
 
@@ -30,7 +30,8 @@ const Footer = () => {
           <Holder>
             <Title>Menu</Title>
             <span>Home</span>
-            <span>Contact</span>
+            <span>Contact Us</span>
+            <span>Donate Blood</span>
           </Holder>
           <Holder>
             <Title>Help</Title>
@@ -47,7 +48,7 @@ const Footer = () => {
           </Holder>
         </OtherNav>
       </Wrapper>
-      <small>Developed by Team Code Crusaders</small>
+      <small style={{fontFamily:"poppins"}}>Powered by CODELAB.</small>
     </Container>
   );
 };
@@ -56,10 +57,12 @@ export default Footer;
 
 
 const Icn = styled.div`
-display: flex
-`
+display: flex;
+align-items: center;
+`;
 const Number = styled.div`
 margin-left: 10px;
+font-size: 12px;
 `
 
 const Container = styled.div`
@@ -85,6 +88,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 20px 0;
+  font-family: poppins;
 
   @media (max-width: 500px) {
     justify-content: center;
@@ -92,6 +96,7 @@ const Wrapper = styled.div`
 `;
 const AbtBag = styled.div`
   margin-bottom: 10px;
+
   @media (max-width: 500px) {
     display: flex;
     flex-direction: column;
@@ -100,22 +105,24 @@ const AbtBag = styled.div`
     margin-bottom: 30px;
   }
   button {
-    height: 30px;
+    height: 40px;
     width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: poppins;
     color: black;
-    background-color: #a8ff37;
+    background-color: #8A2BE2;
     border: none;
     outline: none;
     color: #fff;
     font-weight: 600;
     border-radius: 4px;
-    transition: all 350ms;
     margin: 10px 0;
     cursor: pointer;
+    transition: all 350ms ease-in-out;
+    margin-top:20px;
+
     :hover {
       transform: scale(0.94);
     }
@@ -123,13 +130,14 @@ const AbtBag = styled.div`
 `;
 const Logo = styled.div`
   font-size: 30px;
-  font-weight: 900;
+  font-weight: 600;
   margin-bottom: 10px;
 `;
 const Text = styled.div`
   width: 250px;
   font-size: 12px;
   margin-bottom: 15px;
+  text-align: justify;
 `;
 const OtherNav = styled.div`
   display: flex;
@@ -144,6 +152,7 @@ const Holder = styled.div`
   flex-direction: column;
   margin: 0 20px;
   font-size: 15px;
+    font-family: poppins;
 
   @media (max-width: 500px) {
     align-items: center;
@@ -158,5 +167,5 @@ const Holder = styled.div`
 const Title = styled.div`
   margin-bottom: 10px;
   font-weight: 600;
-  color: #a7fd37;
+  color: #8A2BE2;
 `;

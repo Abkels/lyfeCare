@@ -219,10 +219,13 @@ const DashTransPage = () => {
 
                         <Button>
                             <Pay onClick={toggle2}>Pay Hospital</Pay>
+
                             <Pay style={{marginLeft
                             :"15px", backgroundColor:"#000000", color:"white"}} onClick={toggle2}>Pay Consultant</Pay>
+
                             <Pay style={{marginLeft
                             :"15px"}} onClick={walletShow}>Send To Friend</Pay>
+
                             <Pay style={{marginLeft
                             :"15px", backgroundColor:"#000000", color:"white"}} onClick={withdrawShow}>Withdraw</Pay>
                         </Button>
@@ -266,6 +269,7 @@ const DashTransPage = () => {
                             <Pay2  type="number"   
                             {...register("amount")}  
                             placeholder="Amount" />
+
                             <PayBut type="submit">Send</PayBut>
                         </Button>
                     </Fund>
@@ -547,8 +551,8 @@ transition: all 350ms ease-in-out;
 
 const Pay = styled.button`
 padding: 13px 13px;
-// background-color: #a8ff37;
-background-color: #F4511E;
+background-color: #8A2BE2;
+// background-color: #F4511E;
 color: white;
 font-weight: 700;
 border-radius: 5px;

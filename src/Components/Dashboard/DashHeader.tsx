@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import pics from "../Assets/Medical-logo.png";
+// import pics from "../Assets/Medical-logo.png";
 import { useAppSelector } from "../Global/Store";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineMail } from "react-icons/ai";
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaHome, FaCloudUploadAlt }  from "react-icons/fa";
+import { FaHome }  from "react-icons/fa";
 import { MdPointOfSale  } from "react-icons/md";
 import { AiFillMessage, AiOutlineLogout, AiOutlineFund } from "react-icons/ai";
 import { GoPerson } from "react-icons/go";
-import { FiUsers } from "react-icons/fi";
 import { MdHealthAndSafety } from "react-icons/md";
 import { UseAppDispach } from "../Global/Store";
 import { logout } from "../Global/ReduxState";
@@ -129,11 +128,11 @@ color: isActive ? "#a8ff37" : "white",
 
 
 
-          <Logo>LIFECARE.</Logo>
+          <Logo>LYFECARE.</Logo>
 
         <User>
 
-          <Icon style={{color:"#000000"}}>
+          <Icon style={{color:"#000000", fontSize:"21px"}}>
             <AiOutlineMail />
           </Icon>
 
@@ -279,14 +278,14 @@ font-size: 18px;
 `;
 
 const UserLetter = styled.div`
-width: 30px;
-height: 30px;
+width: 25px;
+height: 25px;
 border-radius: 50%;
-font-weight: 700;
+font-weight: 600;
 // color: white;
 border: 2px solid #000000;
 margin-right:15px;
-margin-left:15px;
+margin-left:8px;
 text-align: center;
 display: flex;
 justify-content: center;
@@ -313,6 +312,7 @@ margin-right: 25px;
 const Logo = styled.h5`
   font-size: 25px;
   // color: #a8ff37;
+  color: #8A2BE2;
   font-weight: 700;
   margin-left: 25px;
 

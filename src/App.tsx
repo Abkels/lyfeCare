@@ -20,12 +20,17 @@ function App() {
   <>  
 
       <div>
-        {getUser?.name ? <DashBoardRoute /> :         <HomeRoutes />
- }
+        {/* { getUser?.name ?  */}
+        {/* <DashBoardRoute />  */}
+        {/* // : */}
+                 <HomeRoutes /> 
+        {/* } */}
       </div>
 
       <div>
-        {consultant?.name ? <ConsultRoutes /> :  <HomeRoutes /> }
+        { consultant?.name ? <ConsultRoutes /> : 
+        //  <HomeRoutes /> 
+         null }
       </div>
   </>)
    // route 

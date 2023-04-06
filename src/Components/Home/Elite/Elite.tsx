@@ -9,8 +9,10 @@ const Elite = () => {
     <Container>
       <Wrapper>
         <Text>
-          <small>Elites</small>
+          {/* <small>Elites</small> */}
+
           <Title>Worry Not About Your Savings</Title>
+
           <Content>
             <p>
               We ensure that your money is safe and secure. We process your savings for payment to your doctor in good
@@ -19,12 +21,13 @@ const Elite = () => {
             <p>
                 Booking a session with our specialists is so seemless, you can pay for consultations with your savings. <br />
                 You can purchase various HMO plans with your savings.  <br /><br />
-                You can either make a quick save, weekly or monthly save....All you have to do is to click.
+                You can either make a quick save, weekly or monthly save....All you have to do is.. click...
             </p>
           </Content>
+          
           <Visit to="/signup">
-            <span style =  {{color: "#64a70d"}} >Sign up today </span>
-            <HiArrowNarrowRight size="20px"  style =  {{color: "#a8ff37"}} />
+            <span style =  {{}} >Sign up today </span>
+            <HiArrowNarrowRight size="20px"  style =  {{}} />
           </Visit>
         </Text>
 
@@ -89,10 +92,11 @@ const Text = styled.div`
 `;
 const Title = styled.div`
   font-size: 22px;
-  font-weight: 900;
-  font-family: Montserrat;
+  font-weight: 600;
 `;
-const Content = styled.div``;
+const Content = styled.div`
+text-align: justify;
+`;
 
 const Visit = styled(NavLink)`
   display: flex;
@@ -102,7 +106,8 @@ const Visit = styled(NavLink)`
   font-weight: 700;
   margin-top: 40px;
   cursor: pointer;
-  color: #409efb;
+  color: #8A2BE2;
+
   :hover {
       transform: scale(0.94);
     }

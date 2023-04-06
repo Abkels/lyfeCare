@@ -2,12 +2,11 @@
 
 import React from "react";
 import styled from "styled-components";
-import { FaHome, FaCloudUploadAlt } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { MdPointOfSale } from "react-icons/md";
 import { AiFillMessage, AiOutlineLogout, AiOutlineFund } from "react-icons/ai";
 import { FaAmbulance } from "react-icons/fa";
 import { GoPerson } from "react-icons/go";
-import { FiUsers } from "react-icons/fi";
 import { MdHealthAndSafety } from "react-icons/md";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UseAppDispach } from "../Global/Store";
@@ -30,7 +29,7 @@ const SideBar = () => {
               style={({ isActive }) => {
                 return {
                   textDecoration: isActive ? "none" : "none",
-                  color: isActive ? "#a8ff37" : "white",
+                  color: isActive ? "yellow" : "white",
                 };
               }}>
               <Home>
@@ -47,7 +46,7 @@ const SideBar = () => {
               style={({ isActive }) => {
                 return {
                   textDecoration: isActive ? "none" : "none",
-                  color: isActive ? "#a8ff37" : "white",
+                  color: isActive ? "yellow" : "white",
                 };
               }}>
               <Home>
@@ -64,7 +63,7 @@ const SideBar = () => {
               style={({ isActive }) => {
                 return {
                   textDecoration: isActive ? "none" : "none",
-                  color: isActive ? "#a8ff37" : "white",
+                  color: isActive ? "yellow" : "white",
                 };
               }}>
               <Home>
@@ -81,7 +80,7 @@ const SideBar = () => {
               style={({ isActive }) => {
                 return {
                   textDecoration: isActive ? "none" : "none",
-                  color: isActive ? "#a8ff37" : "white",
+                  color: isActive ? "yellow" : "white",
                 };
               }}>
               <Home>
@@ -89,7 +88,7 @@ const SideBar = () => {
                   <MdHealthAndSafety />
                 </Icon>
 
-                <HomeText>HMO <br /> <span style={{color:"#a8ff37", fontWeight:"700", fontSize:"12px"}}>coming soon!</span></HomeText>
+                <HomeText>HMO <br /> <span style={{color:"#a8ff37", fontWeight:"700", fontSize:"10px"}}>coming soon!</span></HomeText>
               </Home>
             </NavLink>
 
@@ -98,7 +97,7 @@ const SideBar = () => {
               style={({ isActive }) => {
                 return {
                   textDecoration: isActive ? "none" : "none",
-                  color: isActive ? "#a8ff37" : "white",
+                  color: isActive ? "yellow" : "white",
                 };
               }}>
               <Home>
@@ -117,7 +116,7 @@ const SideBar = () => {
               style={({ isActive }) => {
                 return {
                   textDecoration: isActive ? "none" : "none",
-                  color: isActive ? "#a8ff37" : "white",
+                  color: isActive ? "yellow" : "white",
                 };
               }}>
               <Home>
@@ -125,7 +124,7 @@ const SideBar = () => {
                   <FaAmbulance />
                 </Icon>
 
-                <HomeText>Ambulance Services <br /> <span style={{color:"#a8ff37", fontWeight:"700", fontSize:"12px"}}>Coming Soon!</span></HomeText>
+                <HomeText>Ambulance Services <br /> <span style={{color:"yellow", fontWeight:"700", fontSize:"10px"}}>Coming Soon!</span></HomeText>
               </Home>
             </NavLink>
 
@@ -134,7 +133,7 @@ const SideBar = () => {
               style={({ isActive }) => {
                 return {
                   textDecoration: isActive ? "none" : "none",
-                  color: isActive ? "#a8ff37" : "white",
+                  color: isActive ? "yellow" : "white",
                 };
               }}>
               <Home>
@@ -179,13 +178,13 @@ export default SideBar;
 const Bottom = styled.div``;
 
 const HomeText = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   // color: #e4e932;
   font-weight: 700;
 `;
 
 const Icon = styled.div`
-  font-size: 17px;
+  font-size: 15px;
   margin-right: 10px;
   color: #a8ff37;
 `;
@@ -193,7 +192,7 @@ const Icon = styled.div`
 const Home = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   cursor: pointer;
 `;
 
@@ -201,7 +200,8 @@ const Admin = styled.div`
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 30px;
-  color: #a8ff37;
+  // color: #a8ff37;
+  color: white;
 `;
 
 const Top = styled.div``;
@@ -224,6 +224,6 @@ const Body = styled.div`
   /* justify: content; */
   align-items: center;
   position: fixed;
-  background-color: #1f1f1f;
-  // background-color: rgb(0, 33, 37);
+  // background-color: #1f1f1f;
+  background-color: #8A2BE2;
 `;

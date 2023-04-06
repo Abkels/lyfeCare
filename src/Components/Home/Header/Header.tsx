@@ -15,7 +15,7 @@ const Header = () => {
     <>
       <Container>
         <Wrapper>
-          <NavLink style={{ textDecoration: "none", color: "black" }} to="/">
+          <NavLink style={{ textDecoration: "none", color: "white" }} to="/">
             <Logo>LIFECARE.</Logo>
           </NavLink>
 
@@ -39,7 +39,7 @@ const Header = () => {
               <Button>Sign Up</Button>
             </Navs>
             <Navs to="/signin">
-              <Button>Sign In</Button>
+              <Button style={{backgroundColor:"white", color:"#8A2BE2"}}>Sign In</Button>
             </Navs>
           </Navigations>
 
@@ -131,23 +131,28 @@ const DropDown = styled.div`
 const Holder = styled.div`
   margin-top: 40px;
 `;
-const Button = styled.div`
+const Button = styled.button`
   /* padding: 7px 10px; */
-  padding: 15px;
+  // padding: 15px;
+  width: 120px;
+  height: 40px;
   display: block;
-  margin-left: 15px;
+  // margin-left: 15px;
   justify-content: center;
+  cursor: pointer;
+  transition: all 360ms ease-in-out;
+
   :hover {
     transform: scale(0.94);
   }
   /* align-items: center; */
   font-family: poppins;
-  background-color: #a8ff37;
+  background-color: #8A2BE2;
   border: none;
   outline: none;
-  color: black;
+  color: white;
   font-weight: 600;
-  border-radius: 20px;
+  border-radius: 7px;
 `;
 
 const Container = styled.div`
@@ -156,20 +161,25 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  position: fixed;
+  z-index: 100;
+  color: white;
+
   @media (max-width: 510px) {
     height: 65px;
   }
 `;
 const Wrapper = styled.div`
-  width: 85%;
+  width: 87%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 const Logo = styled.div`
-  color: black;
+  color: white;
   /* color: #a8ff37; */
-  width: 60px;
+  // width: 60px;
   font-weight: bold;
   img {
     width: 100%;
@@ -186,7 +196,7 @@ const Navigations = styled.div`
   }
 `;
 const Navs = styled(NavLink)`
-  color: #000;
+  color: #ffffff;
   text-decoration: none;
   display: flex;
   justify-content: center;
