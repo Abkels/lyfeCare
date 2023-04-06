@@ -13,7 +13,7 @@ const ExclusiveService = () => {
     <Container>
     <Wrapper>
       <Title>Our Exclusive Services</Title>
-      <Sub>Try out our exclusive services today</Sub>
+      <Sub>Try our services today</Sub>
 
       <CardHold>
         
@@ -87,14 +87,13 @@ const Wrapper = styled.div`
 `;
 const Title = styled.div`
   font-size: 30px;
-  font-weight: 900;
-  /* font-family: nunito; */
+  font-weight: 600;
   text-align: center;
 `;
 const Sub = styled.div`
   font-size: 13px;
   margin-bottom: 20px;
-  color: #64a70d;
+  color: #8A2BE2;
   font-weight: bold;
 `;
 const CardHold = styled.div`
@@ -106,6 +105,7 @@ const CardHold = styled.div`
 const Card = styled.div`
   margin: 10px;
   cursor: pointer;
+  transition: all 360ms ease-in-out;
 
     :hover {
       transform: scale(0.94);
@@ -127,6 +127,6 @@ const ImgDiv = styled.div`
 `;
 const ImgTitle = styled.div`
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
 `;

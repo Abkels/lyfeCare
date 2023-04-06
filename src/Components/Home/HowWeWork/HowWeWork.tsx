@@ -10,7 +10,7 @@ const HowWeWork = () => {
     <Container>
       <Wrapper>
         <Title>How We Work</Title>
-        <SubTitle>Easy As One, Two, Three 😏</SubTitle>
+        <SubTitle>Easy As One, Two, Three</SubTitle>
         <CardHold>
           <Card>
             <InCard>
@@ -70,6 +70,7 @@ export default HowWeWork;
 
 const Img = styled.img`
 height: 95px;
+color: #8A2BE2;
 `
 
 const Container = styled.div`
@@ -77,7 +78,8 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 `;
 const Wrapper = styled.div`
   width: 85%;
@@ -87,13 +89,13 @@ const Wrapper = styled.div`
 `;
 const Title = styled.div`
   font-size: 30px;
-  font-weight: 900;
+  font-weight: 700;
   /* font-family: nunito; */
 `;
 const SubTitle = styled.div`
   font-size: 13px;
   margin-bottom: 30px;
-  color: #64a70d;
+  color: #8A2BE2;
   font-weight: bold;
 `;
 const CardHold = styled.div`
@@ -102,14 +104,14 @@ const CardHold = styled.div`
   flex-wrap: wrap;
 `;
 const Card = styled.div`
-  height: 200px;
+  height: 210px;
   width: 230px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   display: flex;
   border-radius: 5px;
   justify-content: center;
   align-items: center;
-  margin: 10px;
+  margin: 0 20px;
 `;
 const InCard = styled.div`
   width: 90%;
@@ -132,11 +134,10 @@ const IconDiv = styled.div`
   margin-bottom: 20px;
 `;
 const CardTitle = styled.div`
-margin-top: 10px;
-  font-family: Montserrat;
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: #64a70d;
+margin-top: 15px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  // color: #8A2BE2;
 `;
 
 const CardContent = styled.div`

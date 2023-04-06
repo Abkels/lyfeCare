@@ -9,11 +9,11 @@ const AboutUs = () => {
     <Container>
       <Wrapper>
         <Image>
-          <img src= {pic} />
+          <img src= {pic} alt="" />
         </Image>
 
         <Text>
-          <small style={{color: "#64a70d"}}>About Us</small>
+          {/* <small style={{color: "#8A2BE2", fontSIze:"17px"}}>About Us</small> */}
 
           <Title>We Give The Best Of Services</Title>
           
@@ -31,8 +31,8 @@ const AboutUs = () => {
           </Content>
 
           <Visit to="/signup">
-            <span style =  {{color: "#64a70d"}}>Click here to register </span>
-            <HiArrowNarrowRight size="20px" style = {{color:"#64a70d"}} />
+            <span style =  {{}}>Click here to register </span>
+            <HiArrowNarrowRight size="20px" style = {{}} />
           </Visit>
         </Text>
       </Wrapper>
@@ -92,23 +92,28 @@ const Text = styled.div`
 `;
 const Title = styled.div`
   font-size: 22px;
-  font-weight: 900;
-  font-family: Montserrat;
+  font-weight: 700;
 `;
-const Content = styled.div``;
+
+const Content = styled.div`
+text-align: justify;
+`;
+
 const Visit = styled(NavLink)`
   display: flex;
   text-decoration: none;
-
   align-items: center;
   font-size: 13px;
   font-weight: 700;
   margin-top: 40px;
   cursor: pointer;
-  color: #409efb;
+  color: #8A2BE2;
+
   span {
     margin-right: 20px;
+  // color: #8A2BE2;
   }
+
   @media (max-width: 500px) {
     justify-content: center;
   }

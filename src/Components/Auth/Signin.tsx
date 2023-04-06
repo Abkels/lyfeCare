@@ -5,7 +5,7 @@ import styled from "styled-components";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import accidentSignin from "../Assets/accidentSignin.svg";
+import pic from "../Images/sign-up.svg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -55,7 +55,7 @@ const Signin = () => {
 
         <Hold>
           <Right>
-            <RightImg src="/images/health.svg" />
+            <RightImg src={pic} />
           </Right>
 
           <Left>
@@ -63,7 +63,7 @@ const Signin = () => {
               <div
                 style={{
                   fontSize: "20px",
-                  color: "#518f00",
+                  color: "#8A2BE2",
                   fontWeight: "700",
                   marginBottom: "20px",
                   textAlign: "center",
@@ -110,6 +110,7 @@ const Already = styled.div`
   color: #6c63ff;
   margin-top: 15px;
   text-align: center;
+
   @media screen and (max-width: 425px) {
     font-size: 10px;
   }
@@ -118,7 +119,7 @@ const Already = styled.div`
 const Button = styled.button`
   width: 105%;
   height: 40px;
-  background: #518f00;
+  background: #8A2BE2;
   color: white;
   border: none;
   border-radius: 7px;
@@ -133,7 +134,7 @@ const Input = styled.input`
   width: 100%;
   height: 40px;
   border: none;
-  box-shadow: 0 0 2px #6c63ff;
+  box-shadow: 0 0 2px #8A2BE2;
   margin-bottom: 20px;
   border-radius: 7px;
   padding-left: 10px;
@@ -152,7 +153,7 @@ const Input = styled.input`
 const Form = styled.form`
   width: 270px;
   height: 300px;
-  box-shadow: 0 0 3px #518f00;
+  box-shadow: 0 0 3px #8A2BE2;
   border-radius: 10px 0 10px 0;
   padding: 30px;
   padding-right: 40px;

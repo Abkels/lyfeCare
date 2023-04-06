@@ -81,7 +81,7 @@ const DashHome1 = () => {
               </Bal>
 
               <Icon>
-                <AiOutlineDollar />
+                <TbCurrencyNaira />
               </Icon>
             </Up>
 
@@ -95,7 +95,7 @@ const DashHome1 = () => {
               <Wall>
                 <Acct2>
                   Wallet ID
-                  <Ico>
+                  <Ico style={{color:"#000000"}}>
                     <AiOutlineDollar />
                   </Ico>
                 </Acct2>
@@ -124,7 +124,7 @@ const DashHome1 = () => {
                          : 
 
                          (
-                          <Star style={{marginLeft:"20px"}}>
+                          <Star style={{marginLeft:"20px", color:"white"}}>
                             <AiFillStar />
                             <AiFillStar />
                             <AiFillStar />
@@ -136,16 +136,16 @@ const DashHome1 = () => {
               </Wall>
 
               <Wall1>
-                <Acct2>
+                <Acct2 style={{color:"#000000"}}>
                   Eco Bank
-                  <Ico style={{ backgroundColor: "#a8ff37" }}>
+                  <Ico style={{ backgroundColor: "#8A2BE2", color:"white" }}>
                     <AiOutlineDollar />
                   </Ico>
                 </Acct2>
 
                 
 
-                <Acct3>2023456789</Acct3>
+                <Acct3 style={{color:"#000000"}}>2023456789</Acct3>
               </Wall1>
             </Top>
 
@@ -154,7 +154,7 @@ const DashHome1 = () => {
                 <Blood>
                   <Blood1>Blood Type</Blood1>
 
-                  <Ico style={{ backgroundColor: "#a8ff37" }}>
+                  <Ico style={{ backgroundColor: "#8A2BE2", color:"white" }}>
                     <MdBloodtype />
                   </Ico>
                 </Blood>
@@ -170,7 +170,7 @@ const DashHome1 = () => {
                 <Blood>
                   <Blood1>Genotype</Blood1>
 
-                  <Ico style={{ backgroundColor: "#a8ff37" }}>
+                  <Ico style={{ backgroundColor: "#8A2BE2", color:"white" }}>
                     <MdOutlineBloodtype />
                   </Ico>
                 </Blood>
@@ -206,7 +206,8 @@ font-size: 18px;
 
 const Icn = styled.div`
 font-size: 25px;
-color: #86ea03;
+// color: #8A2BE2;
+// color: #86ea03;
 margin-left: 10px;
 margin-top: 5px;
 cursor: pointer;
@@ -249,7 +250,7 @@ const Blood = styled.div`
 margin-left: 20px;
 margin-right: 20px;
 margin-top: 10px;
-width: 90%;
+width: 86%;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -283,7 +284,7 @@ height: 30px;
 `;
 
 const Acct3 = styled.div`
-// color: white;
+color: white;
 margin-left: 15px;
 margin-top: 30px;
 font-weight: 700;
@@ -299,7 +300,7 @@ font-size: 22px;
 `;
 
 const Acct2 = styled.div`
-// color: white;
+color: white;
 margin-left: 20px;
 margin-right: 20px;
 margin-top: 15px;
@@ -351,9 +352,8 @@ flex-direction: column;
 const Wall = styled.div`
 width: 49%;
 height: 140px;
-background-color: #a8ff37;
-// background-color: cyan;
-// background-color: rgb(0, 33, 37);
+// background-color: #a8ff37;
+background-color: #8A2BE2;
 border-radius: 10px 0 10px 0;
 
   @media screen and (max-width: 375px) {
@@ -381,14 +381,15 @@ flex-direction: column;
 
 const Icon = styled.div`
 font-size: 35px;
-// color: #6C63FF;
-color: rgb(0, 33, 37);
+color: #ffffff;
+// color: rgb(0, 33, 37);
 margin-right: 20px;
 margin-top: 20px;
 width: 50px;
 height: 50px;
 border-radius: 5px;
-background-color: #a8ff37;
+// background-color: #a8ff37;
+background-color: #8A2BE2;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -412,8 +413,8 @@ font-weight: 700;
 margin-bottom: 10px;
 display: flex;
 align-items: center;
-// color: #f9e736;
-color: #a8ff37;
+// color: #8A2BE2;
+// color: #a8ff37;
 margin-top: 20px;
 `;
 

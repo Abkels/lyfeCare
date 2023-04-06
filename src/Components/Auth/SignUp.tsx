@@ -66,7 +66,7 @@ const SignUp = () => {
               <div
                 style={{
                   fontSize: "20px",
-                  color: "#567e22",
+                  color: "#8A2BE2",
                   fontWeight: "700",
                   marginBottom: "20px",
                   textAlign: "center",
@@ -156,14 +156,16 @@ const Already = styled.div`
 const Button = styled.button`
   width: 105%;
   height: 40px;
-  background: #567e22;
+  background: #8A2BE2;
   color: white;
   border: none;
   border-radius: 7px;
   cursor: pointer;
   transition: all 350ms;
   :hover {
-    background-color: #567e22;
+    background-color: transparent;
+    border: 1px solid #8A2BE2;
+    color: #8A2BE2;
   }
 `;
 
@@ -172,7 +174,7 @@ const Input = styled.input`
   width: 100%;
   height: 40px;
   border: none;
-  box-shadow: 0 0 2px #567e22;
+  box-shadow: 0 0 2px #8A2BE2;
   margin-bottom: 20px;
   border-radius: 7px;
   padding-left: 10px;
@@ -193,7 +195,7 @@ const Input = styled.input`
 const Form = styled.form`
   width: 270px;
   height: 500px;
-  box-shadow: 0 0 3px #567e22;
+  box-shadow: 0 0 3px #8A2BE2;
   border-radius: 10px 0 10px 0;
   padding: 30px;
   padding-right: 40px;

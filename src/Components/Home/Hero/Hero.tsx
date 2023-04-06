@@ -10,16 +10,19 @@ const Hero = () => {
         <ImgTextHold>
           <TextDiv>
             <Title>
-              <div>Safe guarding</div>
-              <div>against Health Emergencies</div>
+              <div style={{fontFamily:"poppins", fontWeight
+            :"600", marginBottom:"4px"}}>Safe Guarding</div>
+              <div style={{fontWeight
+            :"600"}}>Against Health Emergencies</div>
               {/* <div>In Emergency Situations</div> */}
             </Title>
 
             <Content>
-              Save with us today to cater for advance payments in cases 
-              of health emergency. <br />
+              {/* Save with us today to cater for advance payments in cases  */}
+              {/* of health emergency. <br /> */}
+              Giving lifeline to your deadline...
             </Content>
-            <p style={{fontWeight: "bold"}}>LIFECARE... Giving lifeline to your deadline!!!</p>
+            {/* <p style={{fontWeight: "bold"}}>Giving lifeline to your deadline...</p> */}
             
             <ButtonHold>
               <NavLink

@@ -8,11 +8,11 @@ const ChooseSignUp = () => {
   
   return (
     <Container>
-      <Head>LifeCare Is all you need for your health insurance</Head>
+      <Head>Health Insurance At Your Saving Pace...</Head>
       <Wrapper>
         <Right>
           <Box>
-            <p>A platform for All</p>
+            {/* <p>A platform for All</p> */}
 
             <Input to="/signuser">Sign Up as a User</Input>
 
@@ -33,17 +33,19 @@ const ChooseSignUp = () => {
 export default ChooseSignUp;
 
 const Input = styled(NavLink)`
-  height: 40px;
+  height: 50px;
   width: 250px;
-  border: 1px light gray;
+  // border: 2px light gray;
   border-radius: 5px;
   font-weight: 500;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  margin-bottom: 30px;
+  box-shadow: 0 0 1px #8A2BE2;
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7bb136;
+  color: #8A2BE2;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
 
@@ -56,12 +58,13 @@ const Input = styled(NavLink)`
 const Box = styled.div`
   height: 300px;
   width: 300px;
-  box-shadow: rgba(209, 101, 101, 0.2) 0px 2px 8px 0px;
+  box-shadow: 0 0 2px #8A2BE2;
   border-radius: 5px;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  border: 1px solid #a7fd3784;
+  // border: 1px solid #a7fd3784;
 
   p {
     font-size: 20px;
@@ -100,7 +103,7 @@ const Wrapper = styled.div`
 const Head = styled.div`
   height: 30vh;
   width: 100%;
-  background-color: #518f00;
+  background-color:#8A2BE2;
   display: flex;
   justify-content: center;
   align-items: center;

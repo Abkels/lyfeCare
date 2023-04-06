@@ -4,14 +4,15 @@ import Elite from './Elite/Elite'
 import ExclusiveService from './ExclusiveService/ExclusiveService'
 import Footer from './Footer/Folder'
 import Header from './Header/Header'
-import Hero from './Hero/Hero'
+// import Hero from './Hero/Hero'
+import Heroo from './Herro/Herro'
 import HowWeWork from './HowWeWork/HowWeWork'
 
 const LandingPage = () => {
   return (
     <div>
       <Header />
-      <Hero />
+      <Heroo />
       <HowWeWork />
       <br /> <br />
       <AboutUs />
