@@ -20,11 +20,11 @@ function App() {
   <>  
 
       <div>
-        {/* { getUser?.name ?  */}
-        {/* <DashBoardRoute />  */}
-        {/* // : */}
+        { getUser?.name ?  
+       <DashBoardRoute />  
+         :
                  <HomeRoutes /> 
-        {/* } */}
+        }
       </div>
 
       <div>
