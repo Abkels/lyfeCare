@@ -42,6 +42,18 @@ font-size: 20px;
 margin-top: 20px;
 font-weight: 600;
 z-index: 1;
+
+@media screen and (max-width: 768px) {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 425px) {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 320px) {
+    font-size: 12px;
+}
 `;
 
 const Get = styled.button`
@@ -78,11 +90,11 @@ line-height: 27px;
     line-height: 23px;
 }
 @media screen and (max-width: 500px) {
-    font-size: 13px;
+    font-size: 12px;
     text-align: center
 }
 @media screen and (max-width: 347px) {
-    font-size: 11px;
+    font-size: 10px;
     line-height: 20px;
 }
 `;
@@ -97,13 +109,20 @@ margin-top: 25px;
 
 @media screen and (max-width: 768px) {
     font-size: 50px;
+    line-height: 50px;
 }
+
 @media screen and (max-width: 500px) {
-    font-size: 35px;
-    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
 }
+
 @media screen and (max-width: 347px) {
-    font-size: 25px;
+    font-size: 22px;
+}
+
+@media screen and (max-width: 320px) {
+    line-height: 27px;
 }
 `;
 
@@ -113,8 +132,11 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 margin-left: 80px;
-@media screen and (max-width: 600px) {
-    margin-left: 30px;
+
+@media screen and (max-width: 768px) {
+    text-align: center;
+    align-items: center;
+    margin: 0;
 }
 @media screen and (max-width: 500px) {
     align-items: center;
@@ -127,6 +149,10 @@ position: absolute;
 width: 100%;
 height: 100%;
 background-color: #0e0e0e53;
+
+@media screen and (max-width: 768px) {
+    background-color: #0e0e0e85;
+}
 `;
 
 const Herro = styled.div`

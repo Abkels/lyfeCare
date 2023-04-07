@@ -11,34 +11,49 @@ const Header = () => {
     setShow(!show);
   };
 
+  const [scroll, setScroll] = useState<Boolean>(false);
+
+  const changeBg = () => {
+    if (window.scrollY >= 70) {
+      setScroll(true)
+    } else {
+      setScroll(false)
+    }
+  };
+
+  window.addEventListener("scroll", changeBg)
+
   return (
     <>
-      <Container>
+
+    { scroll ? (
+      
+      <Container bg="white" style={{transition:"all 350ms ease-in-out"}} >
         <Wrapper>
           <NavLink style={{ textDecoration: "none", color: "white" }} to="/">
-            <Logo>LIFECARE.</Logo>
+            <Logo cr="#8A2BE2">LIFECARE.</Logo>
           </NavLink>
 
           <Navigations>
-            <Navs to="/">
+            <Navs to="/" cl="#8A2BE2">
               <RiHomeSmileFill />
               <span>Home</span>
             </Navs>
             
-            <Navs to="/footer">
+            <Navs to="/footer" cl="#8A2BE2">
               <IoMdContact />
               <span>Contact us</span>
             </Navs>
 
-            <Navs to="/donateblood">
+            <Navs to="/donateblood" cl="#8A2BE2">
               <IoMdPricetags />
               <span>Donate Blood</span>
             </Navs>
 
-            <Navs to="/signup">
+            <Navs to="/signup" cl="#8A2BE2">
               <Button>Sign Up</Button>
             </Navs>
-            <Navs to="/signin">
+            <Navs to="/signin" cl="#8A2BE2">
               <Button style={{backgroundColor:"white", color:"#8A2BE2"}}>Sign In</Button>
             </Navs>
           </Navigations>
@@ -61,6 +76,59 @@ const Header = () => {
           ) : null}
         </Wrapper>
       </Container>
+
+    ) : (
+      
+      <Container bg="">
+        <Wrapper>
+          <NavLink style={{ textDecoration: "none", color: "white" }} to="/">
+            <Logo cr="">LIFECARE.</Logo>
+          </NavLink>
+
+          <Navigations>
+            <Navs to="/" cl="white">
+              <RiHomeSmileFill />
+              <span>Home</span>
+            </Navs>
+            
+            <Navs to="/footer" cl="white">
+              <IoMdContact />
+              <span>Contact us</span>
+            </Navs>
+
+            <Navs to="/donateblood" cl="white">
+              <IoMdPricetags />
+              <span>Donate Blood</span>
+            </Navs>
+
+            <Navs to="/signup" cl="">
+              <Button>Sign Up</Button>
+            </Navs>
+            <Navs to="/signin" cl="">
+              <Button style={{backgroundColor:"white", color:"#8A2BE2"}}>Sign In</Button>
+            </Navs>
+          </Navigations>
+
+          <BurgerMenu onClick={toggle}>
+            <GiHamburgerMenu />
+          </BurgerMenu>
+
+          {show ? (
+            <DropDown>
+              <Holder>
+                <SideNavs to="/">Home</SideNavs>
+                <SideNavs to="/about">About</SideNavs>
+                <SideNavs to="footer">Contact us</SideNavs>
+                <SideNavs to="/donateblood">Donate Blood</SideNavs>
+                <SideNavs to="/signuser">Sign Up</SideNavs>
+                <SideNavs to="/signin">Sign In</SideNavs>
+              </Holder>
+            </DropDown>
+          ) : null}
+        </Wrapper>
+      </Container>
+    )}
+
     </>
   );
 };
@@ -139,6 +207,7 @@ const Button = styled.button`
   display: block;
   // margin-left: 15px;
   justify-content: center;
+  font-family: poppins;
   cursor: pointer;
   transition: all 360ms ease-in-out;
 
@@ -155,16 +224,15 @@ const Button = styled.button`
   border-radius: 7px;
 `;
 
-const Container = styled.div`
+const Container = styled.div<{bg: string}>`
   height: 80px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  background-color: ${(props) => props.bg};
   position: fixed;
   z-index: 100;
-  color: white;
 
   @media (max-width: 510px) {
     height: 65px;
@@ -176,8 +244,8 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const Logo = styled.div`
-  color: white;
+const Logo = styled.div<{cr: string}>`
+  color: ${(props) => props.cr};
   /* color: #a8ff37; */
   // width: 60px;
   font-weight: bold;
@@ -195,8 +263,8 @@ const Navigations = styled.div`
     display: none;
   }
 `;
-const Navs = styled(NavLink)`
-  color: #ffffff;
+const Navs = styled(NavLink)<{cl: string}>`
+  color: ${(props) => props.cl};
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -216,5 +284,12 @@ const BurgerMenu = styled.div`
   display: none;
   @media (max-width: 768px) {
     display: block;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 3px;
   }
 `;
