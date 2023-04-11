@@ -111,7 +111,7 @@ const Card = styled.div`
   border-radius: 5px;
   justify-content: center;
   align-items: center;
-  margin: 0 20px;
+  margin: 10px 20px;
 `;
 const InCard = styled.div`
   width: 90%;

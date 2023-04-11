@@ -202,13 +202,6 @@ margin-bottom: 10px;
 cursor: pointer;
 `;
 
-const Admin = styled.div`
-font-size: 20px;
-font-weight: 700;
-margin-bottom: 30px;
-color: #a8ff37;
-`;
-
 const Top = styled.div`
 
 `;
@@ -235,7 +228,7 @@ z-index: 300;
 width: 300px;
 height: 450px;
 // background-color: #1f1f1f;
-background-color: #1f1f1f;
+background-color: #8A2BE2;
 position: absolute;
 top: 70px;
 right: 20px;
@@ -321,21 +314,14 @@ const Logo = styled.h5`
   }
 `;
 
-const Side = styled.div``;
-
-
 const Head = styled.div`
   height: 70px;
   width: 100%;
-  // background-color: #6C63FF;
-  // background-color: rgb(0, 33, 37);
-  // background-color: #1f1f1f;
   background-color: white;
   color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   position: fixed;
   z-index: 400;
 `;

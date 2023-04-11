@@ -16,18 +16,17 @@ const lifeUrl = "https://codecrusaderslifecare.onrender.com/api";
 
 const localHost = ""
 
-export const signup = async ({ name, email, password, genotype, bloodGroup }: any) => {
+export const signup = async ({ userName, email, password, confirmPassword }: any) => {
   return await axios
     .post(`${lifeUrl}/postUser`, 
     // {
     // .post(`https://codecrusaderslifecare.onrender.com/api/postUser`, 
     // .post(`http://localhost:2001/api/postUser`, 
     {
-      name,
+      userName,
       email,
       password,
-      genotype,
-      bloodGroup
+      confirmPassword,
     })
   .then((res) =>{
     return res.data

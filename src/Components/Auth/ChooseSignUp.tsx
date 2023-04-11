@@ -10,11 +10,12 @@ const ChooseSignUp = () => {
     <Container>
       <Head>Health Insurance At Your Saving Pace...</Head>
       <Wrapper>
+
         <Right>
           <Box>
             {/* <p>A platform for All</p> */}
 
-            <Input to="/signuser">Sign Up as a User</Input>
+            <Input to="/usersignup1">Sign Up as a User</Input>
 
             <Input to="/signconsultant">Sign up as a Consultant</Input>
 
@@ -22,6 +23,7 @@ const ChooseSignUp = () => {
 
           </Box>
         </Right>
+
         <Left>
           <Img src={pic} />
         </Left>
@@ -78,6 +80,10 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+ @media screen and (max-width: 768px) {
+  width: 100%
+ }
 `;
 const Img = styled.img`
   height: 300px;
@@ -101,7 +107,7 @@ const Wrapper = styled.div`
 `;
 
 const Head = styled.div`
-  height: 30vh;
+  height: 25vh;
   width: 100%;
   background-color:#8A2BE2;
   display: flex;
@@ -111,7 +117,25 @@ const Head = styled.div`
   font-weight: 500;
   color: #ffffff;
   border-bottom-left-radius: 30%;
+ 
+ @media screen and (max-width: 768px) {
+  font-size: 30px;
+  text-align: center;
+ }
+
+ @media screen and (max-width: 425px) {
+  font-size: 25px;
+ }
+
+ @media screen and (max-width: 375px) {
+  font-size: 22px;
+ }
+
+ @media screen and (max-width: 375px) {
+  font-size: 16px;
+ }
 `;
+
 const Container = styled.div`
   height: 100vh;
   width: 100%;
@@ -120,5 +144,6 @@ const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     justify-content: center;
+    margin-top: -20px;
   }
 `;

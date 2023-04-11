@@ -5,7 +5,6 @@ import styled from "styled-components";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
-import accidentSignup from "../Assets/accidentSignup.png";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { UserData } from "../interface/interface";
@@ -21,11 +20,10 @@ const SignUp = () => {
   
   const schema = yup
     .object({
-      name: yup.string().required(),
+      userName: yup.string().required(),
       email: yup.string().required(),
       password: yup.string().min(9).required(),
-      genotype: yup.string(),
-      bloodGroup: yup.string(),
+      confirmPassword: yup.string().min(9).required(),
     })
     .required();
 
@@ -53,7 +51,7 @@ const SignUp = () => {
   const Submit = handleSubmit(async (data) => {
     posting.mutate(data);
     reset();
-    navigate("/dashboardhome");
+    navigate("/otp");
   });
 
   //
@@ -63,6 +61,18 @@ const SignUp = () => {
         <Hold>
           <Left>
             <Form onSubmit={Submit}>
+
+            <Seq>
+                <SeqNum style={{color:"white", backgroundColor:"#8A2BE2"}}>1</SeqNum>
+                <div> ----- </div>
+                <SeqNum>2</SeqNum>
+                <div> ----- </div>
+                <SeqNum>3</SeqNum>
+                <div> ----- </div>
+                <SeqNum>4</SeqNum>
+            </Seq>
+
+
               <div
                 style={{
                   fontSize: "20px",
@@ -76,28 +86,16 @@ const SignUp = () => {
 
               <Input
                 type="text"
-                placeholder="Full Name"
-                {...register("name")}
+                placeholder="Username"
+                {...register("userName")}
               />
               <p style={{ fontSize: "10px" }}>
-                {errors?.name && errors?.name?.message}
+                {errors?.userName && errors?.userName?.message}
               </p>
 
               <Input type="text" placeholder="Email" {...register("email")} />
               <p style={{ fontSize: "10px" }}>
                 {errors?.email && errors?.email?.message}
-              </p>
- 
-
-              <Input type="text" placeholder="Genotype" {...register("genotype")} />
-              <p style={{ fontSize: "10px" }}>
-                {errors?.genotype && errors?.genotype?.message}
-              </p>
-
-
-              <Input type="text" placeholder="Blood Group" {...register("bloodGroup")} />
-              <p style={{ fontSize: "10px" }}>
-                {errors?.bloodGroup && errors?.bloodGroup?.message}
               </p>
 
               <Input
@@ -107,6 +105,15 @@ const SignUp = () => {
               />
               <p style={{ fontSize: "10px" }}>
                 {errors?.password && errors?.password?.message}
+              </p>
+
+              <Input
+                type="password"
+                placeholder="Confirm Password"
+                {...register("confirmPassword")}
+              />
+              <p style={{ fontSize: "10px" }}>
+                {errors?.confirmPassword && errors?.confirmPassword?.message}
               </p>
 
 
@@ -128,6 +135,27 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+const SeqNum = styled.h6`
+padding: 4px 7px;
+border-radius:50%;
+text-align:center;
+border: 1px solid #8A2BE2;
+color: #8A2BE2;
+`;
+
+const Seq = styled.div`
+width: 100%;
+height: 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+
+div{
+color: #8A2BE2;
+}
+`;
 
 const RightImg = styled.img`
   width: 500px;
@@ -170,17 +198,17 @@ const Button = styled.button`
 `;
 
 const Input = styled.input`
-  // <{ props: string }>
   width: 100%;
   height: 40px;
   border: none;
   box-shadow: 0 0 2px #8A2BE2;
-  margin-bottom: 20px;
   border-radius: 7px;
   padding-left: 10px;
+  // outline: #8A2BE2;
 
   p {
     font-size: 10px;
+  margin-bottom: 10px;
   }
 
   @media screen and (max-width: 425px) {
@@ -194,24 +222,28 @@ const Input = styled.input`
 
 const Form = styled.form`
   width: 270px;
-  height: 500px;
+  height: 400px;
   box-shadow: 0 0 3px #8A2BE2;
   border-radius: 10px 0 10px 0;
   padding: 30px;
-  padding-right: 40px;
+  // padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   @media screen and (max-width: 425px) {
-    width: 350px;
-    padding: 20px;
-    padding-right: 30px;
+    // padding: 20px;
+    // padding-right: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     box-shadow: none;
   }
-  @media screen and (max-width: 320px) {
-    width: 390px;
-    padding: 10px;
-    padding-right: 20px;
+  @media screen and (max-width: 375px) {
+  width: 285px;
+    // padding: 10px;
+    // padding-right: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
