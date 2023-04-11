@@ -65,12 +65,14 @@ const Header = () => {
           {show ? (
             <DropDown>
               <Holder>
-                <SideNavs to="/">Home</SideNavs>
-                <SideNavs to="/about">About</SideNavs>
-                <SideNavs to="footer">Contact us</SideNavs>
-                <SideNavs to="/donateblood">Donate Blood</SideNavs>
-                <SideNavs to="/signuser">Sign Up</SideNavs>
-                <SideNavs to="/signin">Sign In</SideNavs>
+                <SideNavs style={{color:"white"}}   to="/"> <RiHomeSmileFill /> Home</SideNavs>
+                {/* <SideNavs to="/about">About</SideNavs> */}
+                <SideNavs to="footer"> <IoMdContact /> Contact us</SideNavs>
+                <SideNavs to="/donateblood"> <IoMdPricetags /> Donate Blood</SideNavs>
+
+                <SideNavs style={{width:"100px", backgroundColor:"white", color:"#8a2be2", height:"40px", borderRadius:"5px"}} to="/signup">Sign Up</SideNavs>
+
+                <SideNavs style={{width:"100px", backgroundColor:"transparent", border:"1px solid white", height:"40px", borderRadius:"5px"}} to="/signin">Sign In</SideNavs>
               </Holder>
             </DropDown>
           ) : null}
@@ -115,14 +117,14 @@ const Header = () => {
 
           {show ? (
             <DropDown>
-              <Holder>
-                <SideNavs to="/">Home</SideNavs>
-                <SideNavs to="/about">About</SideNavs>
-                <SideNavs to="footer">Contact us</SideNavs>
-                <SideNavs to="/donateblood">Donate Blood</SideNavs>
-                <SideNavs to="/signuser">Sign Up</SideNavs>
-                <SideNavs to="/signin">Sign In</SideNavs>
-              </Holder>
+            <Holder>
+              <SideNavs style={{color:"white"}}  to="/"> <RiHomeSmileFill /> Home</SideNavs>
+              {/* <SideNavs to="/about">About</SideNavs> */}
+              <SideNavs to="footer"> <IoMdContact /> Contact us</SideNavs>
+              <SideNavs to="/donateblood"> <IoMdPricetags /> Donate Blood</SideNavs>
+              <SideNavs style={{width:"100px", backgroundColor:"white", color:"#8a2be2", height:"40px", borderRadius:"5px"}} to="/signup">Sign Up</SideNavs>
+              <SideNavs style={{width:"100px", backgroundColor:"transparent", border:"1px solid white", height:"40px", borderRadius:"5px"}} to="/signin">Sign In</SideNavs>
+            </Holder>
             </DropDown>
           ) : null}
         </Wrapper>
@@ -140,9 +142,12 @@ const SideNavs = styled(NavLink)`
   margin-top: 10px;
   color: #fff;
   display: flex;
+  flex-direction: column;
   font-size: 16px;
   justify-content: center;
   align-items: center;
+  font-family: poppins;
+  margin-bottom: 15px;
 
   :hover {
     cursor: pointer;
@@ -182,9 +187,9 @@ const SideNavs = styled(NavLink)`
   }
 `;
 const DropDown = styled.div`
-  height: 100vh;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  height: 330px;
+  width: 250px;
+  background: #8A2BE2;
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
@@ -193,7 +198,9 @@ const DropDown = styled.div`
   font-weight: 600;
   z-index: 10;
   position: absolute;
-  top: 16%;
+  top: 70px;
+  right: 20px;
+  border-radius: 7px;
 `;
 
 const Holder = styled.div`
@@ -291,5 +298,6 @@ const BurgerMenu = styled.div`
     align-items: center;
     background-color: white;
     border-radius: 3px;
+    color: #8A2BE2;
   }
 `;
