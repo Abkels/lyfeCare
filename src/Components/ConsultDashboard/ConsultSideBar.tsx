@@ -139,7 +139,7 @@ const Admin = styled.div`
 font-size: 20px;
 font-weight: 700;
 margin-bottom: 30px;
-color: #a8ff37;
+color: white;
 `;
 
 const Top = styled.div`
@@ -164,8 +164,8 @@ display: flex;
 /* justify-content: ; */
 align-items: center;
 position: fixed;
-background-color: #1f1f1f;
-// background-color: rgb(0, 33, 37);
+// background-color: #1f1f1f;
+background-color: #8A2BE2;
 `;
 
 
