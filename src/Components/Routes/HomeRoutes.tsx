@@ -10,6 +10,7 @@ import LandingPage from "../Home/LandingPage";
 import UserSignUp2 from "../Auth/userSignUp2";
 import InputOTP from "../Auth/InputOTP";
 import UserSignUp3 from "../Auth/UserSignUp3";
+import ConsultantSignUp2 from "../Auth/ConsultantSignup2";
 
 
 // type Props = {
@@ -56,8 +57,12 @@ const HomeRoutes = () => {
       element: <SignUp />,
     },
     {
-      path: "signconsultant",
+      path: "/consultantsignup",
       element: <ConsultantSignUp />,
+    },
+    {
+      path: "/consultantsignup2",
+      element: <ConsultantSignUp2 />,
     },
     {
       path: "signhospital",
@@ -65,7 +70,7 @@ const HomeRoutes = () => {
     },
     {
       path: '*',
-      element: <h1>Not FOund</h1>
+      element: <h1>Page Not Found</h1>
     }
     
   ]);

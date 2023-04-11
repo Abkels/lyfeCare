@@ -42,14 +42,11 @@ export const createSpecialist = async ({name, email, password, lience, professio
       email,
       password,
       lience,
-      profession
   }
   ).then((res) => {
     return res.data
   })
 }
-
-
 
 export const signin = async ({ email }: any) => {
   return await axios

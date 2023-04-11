@@ -28,9 +28,10 @@ function App() {
       </div>
 
       <div>
-        { consultant?.name ? <ConsultRoutes /> : 
-        //  <HomeRoutes /> 
-         null }
+        { consultant?.name ? 
+        <ConsultRoutes /> 
+         : 
+          null }
       </div>
   </>)
    // route 

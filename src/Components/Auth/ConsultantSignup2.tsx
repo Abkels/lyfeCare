@@ -15,16 +15,16 @@ import { Link } from "react-router-dom";
 import pic from "../Images/sign-up.svg";
 
 
-const ConsultantSignUp = () => {
+const ConsultantSignUp2 = () => {
   const dispatch = UseAppDispach();
   const navigate = useNavigate();
   
   const schema = yup
     .object({
-      name: yup.string().required(),
-      email: yup.string().required(),
-      password: yup.string().min(9).required(),
-      lience: yup.string().required(),
+      officeAddress: yup.string().required(),
+      specialty: yup.string().required(),
+      bankName: yup.string().min(9).required(),
+      bankAcc: yup.number().required(),
     })
     .required();
 
@@ -52,7 +52,7 @@ const ConsultantSignUp = () => {
   const Submit = handleSubmit(async (data) => {
     posting.mutate(data);
     reset();
-    navigate("/otp");
+    navigate("/");
   });
 
   return (
@@ -64,11 +64,11 @@ const ConsultantSignUp = () => {
               
 
             <Seq>
-                <SeqNum style={{color:"white", backgroundColor:"#8A2BE2"}}>1</SeqNum>
+                <SeqNum>1</SeqNum>
                 <div> -------- </div>
                 <SeqNum>2</SeqNum>
                 <div> -------- </div>
-                <SeqNum>3</SeqNum>
+                <SeqNum style={{color:"white", backgroundColor:"#8A2BE2"}}>3</SeqNum>
             </Seq>
 
               <div
@@ -84,34 +84,32 @@ const ConsultantSignUp = () => {
 
               <Input
                 type="text"
-                placeholder="Full Name"
-                {...register("name")}
+                placeholder="Office Address"
+                {...register("officeAddress")}
               />
-              <p>{errors?.name && errors?.name?.message}</p>
+              <p>{errors?.officeAddress && errors?.officeAddress?.message}</p>
 
-              <Input type="text" placeholder="Email" {...register("email")} />
-              <p>{errors?.email && errors?.email?.message}</p>
+              <Input type="text" placeholder="Specialty" 
+              {...register("specialty")} />
+              <p>{errors?.specialty && errors?.specialty?.message}</p>
 
               <Input
                 type="text"
-                placeholder="License Num"
-                {...register("lience")}
+                placeholder="Bank Name"
+                {...register("bankName")}
               />
-              <p>{errors?.lience && errors?.lience?.message}</p>
+              <p>{errors?.bankName && errors?.bankName?.message}</p>
 
               <Input
                 type="password"
-                placeholder="Password"
-                {...register("password")}
+                placeholder="Bank Account Number"
+                {...register("bankAcc")}
               />
-              <p>{errors?.password && errors?.password?.message}</p>
+              <p>{errors?.bankAcc && errors?.bankAcc?.message}</p>
 
 
-              <Button type="submit">Sign Up</Button>
+              <Button type="submit">Complete Registration</Button>
 
-              <Link style={{ textDecoration: "none" }} to={"/signin"}>
-                <Already>Already have an account? Sign in</Already>
-              </Link>
             </Form>
           </Left>
 
@@ -124,7 +122,7 @@ const ConsultantSignUp = () => {
   );
 };
 
-export default ConsultantSignUp;
+export default ConsultantSignUp2;
 
 const SeqNum = styled.h6`
 padding: 4px 7px;
@@ -158,21 +156,8 @@ const Right = styled.div`
   }
 `;
 
-// const Body = styled.div``;
-
-const Already = styled.div`
-  font-size: 13px;
-  cursor: pointer;
-  color: #8A2BE2;
-  margin-top: 15px;
-  text-align: center;
-  @media screen and (max-width: 425px) {
-    font-size: 10px;
-  }
-`;
-
 const Button = styled.button`
-  width: 100%;
+  width: 105%;
   height: 40px;
   background: #8A2BE2;
   color: white;
@@ -180,6 +165,7 @@ const Button = styled.button`
   border-radius: 7px;
   cursor: pointer;
   transition: all 350ms;
+
   :hover {
     background-color: transparent;
     border: 1px solid #8A2BE2;
@@ -188,7 +174,6 @@ const Button = styled.button`
 `;
 
 const Input = styled.input`
-  // <{ props: string }>
   width: 100%;
   height: 35px;
   border: none;
