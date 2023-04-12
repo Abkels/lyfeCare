@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import {AiOutlinePhone} from 'react-icons/ai'
-import {AiOutlineMail} from 'react-icons/ai'
+import { AiOutlinePhone } from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -10,7 +10,8 @@ const Footer = () => {
         <AbtBag>
           <Logo>LYFECARE.</Logo>
           <Text>
-            LIFECARE is founded with the passion to safe lives, eliminating the excuse of no money in the case of health emergency.
+            LIFECARE is founded with the passion to safe lives, eliminating the
+            excuse of no money in the case of health emergency.
           </Text>
           <Icn>
             <AiOutlinePhone />
@@ -22,9 +23,8 @@ const Footer = () => {
             <Number>lifecare428@gmail.com</Number>
           </Icn>
 
-          <button style={{color: "white"}}>Get Started</button>
+          <button style={{ color: "white" }}>Get Started</button>
         </AbtBag>
-
 
         <OtherNav>
           <Holder>
@@ -48,22 +48,21 @@ const Footer = () => {
           </Holder>
         </OtherNav>
       </Wrapper>
-      <small style={{fontFamily:"poppins"}}>Powered by CODELAB.</small>
+      <small style={{ fontFamily: "poppins" }}>Powered by CODELAB.</small>
     </Container>
   );
 };
 
 export default Footer;
 
-
 const Icn = styled.div`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 `;
 const Number = styled.div`
-margin-left: 10px;
-font-size: 12px;
-`
+  margin-left: 10px;
+  font-size: 12px;
+`;
 
 const Container = styled.div`
   width: 100%;
@@ -112,7 +111,7 @@ const AbtBag = styled.div`
     align-items: center;
     font-family: poppins;
     color: black;
-    background-color: #8A2BE2;
+    background-color: #8a2be2;
     border: none;
     outline: none;
     color: #fff;
@@ -121,7 +120,7 @@ const AbtBag = styled.div`
     margin: 10px 0;
     cursor: pointer;
     transition: all 350ms ease-in-out;
-    margin-top:20px;
+    margin-top: 20px;
 
     :hover {
       transform: scale(0.94);
@@ -152,7 +151,7 @@ const Holder = styled.div`
   flex-direction: column;
   margin: 0 20px;
   font-size: 15px;
-    font-family: poppins;
+  font-family: poppins;
 
   @media (max-width: 500px) {
     align-items: center;
@@ -167,5 +166,5 @@ const Holder = styled.div`
 const Title = styled.div`
   margin-bottom: 10px;
   font-weight: 600;
-  color: #8A2BE2;
+  color: #8a2be2;
 `;

@@ -4,11 +4,9 @@ import { FaUserAlt } from "react-icons/fa";
 import { useAppSelector } from "../Global/Store";
 
 const DashSettings: React.FC = () => {
-
-  const user = useAppSelector ((state)=>state?.currentUser)
+  const user = useAppSelector((state) => state?.currentUser);
   return (
     <Container>
-        
       <Right>
         <Head></Head>
         <Identity>
@@ -16,20 +14,12 @@ const DashSettings: React.FC = () => {
             <FaUserAlt />
           </Image>
           <Hold>
-            <Name>{
-              user?.name.toUpperCase()
-              }</Name>
+            <Name>{user?.name.toUpperCase()}</Name>
 
-            <Email>
-              {
-                user?.email
-              }
-
-            </Email>
+            <Email>{user?.email}</Email>
           </Hold>
         </Identity>
         <Content>
-
           <Profile>
             <p>Profile</p>
             <Input>
@@ -54,7 +44,7 @@ const DashSettings: React.FC = () => {
                 <option value="">O +</option>
                 <option value="">O -</option>
               </select>
-              
+
               <select>
                 <option disabled>Select blood genotype</option>
                 <option value="">AA</option>
@@ -74,7 +64,6 @@ const DashSettings: React.FC = () => {
               <input type="text" placeholder="Confirm-password" />
             </Input>
           </Profile>
-
         </Content>
       </Right>
     </Container>
@@ -116,7 +105,6 @@ const Input = styled.div`
 const Hold = styled.div`
   margin-left: 10px;
 `;
-const Img = styled.div``;
 
 const Name = styled.div`
   font-size: 25px;
@@ -154,7 +142,7 @@ const Identity = styled.div`
 
 const Profile = styled.div`
   height: 400px;
-//   margin-left: 5px;
+  //   margin-left: 5px;
 
   p {
     font-size: 20px;
@@ -175,17 +163,17 @@ const Content = styled.div`
 `;
 
 const Head = styled.div`
-//   height: 170px;
+  //   height: 170px;
   width: 100%;
-//   border-top-left-radius: 15px;
-//   border-top-right-radius: 15px;
-//   background-image: linear-gradient(120deg, #fce579, #9a1ce4);
-margin-top: 80px;
+  //   border-top-left-radius: 15px;
+  //   border-top-right-radius: 15px;
+  //   background-image: linear-gradient(120deg, #fce579, #9a1ce4);
+  margin-top: 80px;
 `;
 
 const Container = styled.div`
-width: 100%;
-display: flex;
-justify-content: center;
-// align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
 `;

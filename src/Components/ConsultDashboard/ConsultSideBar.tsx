@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { FaHome, FaCloudUploadAlt }  from "react-icons/fa";
+import { FaHome, }  from "react-icons/fa";
 import { MdPointOfSale  } from "react-icons/md";
 import { AiFillMessage, AiOutlineLogout, AiOutlineFund } from "react-icons/ai";
-import { GoPerson } from "react-icons/go";
 import { FiUsers } from "react-icons/fi";
 import  { NavLink, useNavigate } from "react-router-dom";
 import { UseAppDispach } from "../Global/Store";
