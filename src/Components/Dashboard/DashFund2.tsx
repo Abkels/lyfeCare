@@ -4,16 +4,11 @@ import { BsFillCreditCardFill, BsQuestionCircleFill } from "react-icons/bs";
 import { RiLock2Fill } from "react-icons/ri";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { UserData } from "../interface/interface";
 import { UseAppDispach, useAppSelector } from "../Global/Store";
-import { User } from "../Global/ReduxState";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useNavigate } from "react-router-dom";
 import { fundFromBank } from "../Api/Api";
-import { useDispatch } from "react-redux";
-import  Swal  from "sweetalert2";
-import axios from "axios";
+import Swal from "sweetalert2";
 
 interface iData {
   name: string;
@@ -65,57 +60,51 @@ const DashFund = () => {
   // const pay = () => {
 
   // }
-  
-    const {
-      handleSubmit,
-      formState: { errors },
-      reset,
-      register,
-    } = useForm<formData>({
-      resolver: yupResolver(schema),
-    });
+
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(schema),
+  });
 
   const posting = useMutation({
     mutationFn: (data: iData) => {
-      return fundFromBank(data, User._id)
+      return fundFromBank(data, User._id);
     },
 
     onSuccess: (myData: any) => {
-      console.log("yo",myData);
-      
+      console.log("yo", myData);
     },
   });
 
   const Submit = handleSubmit((data) => {
-    
     posting.mutate(data);
 
     // console.log("nowm",data);
+    Swal.fire({
+      title: "successful",
+      icon: "success",
+    }).catch((err) => {
       Swal.fire({
-        title: "successful",
-        icon: "success"
-    })
-    .catch((err) => {
-        Swal.fire({
-            title: "an error occured",
-            icon: "error",
-            text: `${err.response?.data?.message}`,
-        })
-    })
+        title: "an error occured",
+        icon: "error",
+        text: `${err.response?.data?.message}`,
+      });
+    });
     reset();
     // navigate("/dashboardhome");
   });
 
-
-
- 
   return (
     <div>
       <Head>
         <Side>
           <Pay>PAYMENT</Pay>
 
-          <Form onSubmit={Submit} >
+          <Form onSubmit={Submit}>
             <Icon>
               <BsFillCreditCardFill />
             </Icon>
@@ -124,17 +113,20 @@ const DashFund = () => {
 
             <Enter>Enter your card information to complete this payment</Enter>
 
-            <Info >
+            <Info>
               <Inp>
                 <Label>Card Number</Label>
                 <Master>
-                  <Input value = "5188513618552975" type="number" {...register("number")} />
+                  <Input
+                    value="5188513618552975"
+                    type="number"
+                    {...register("number")}
+                  />
                   <MasterCard src="/images/master.png" />
                 </Master>
               </Inp>
 
               <Inp
-              
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
@@ -145,8 +137,8 @@ const DashFund = () => {
                   <Label>Expiry Date</Label>
                   <Hold>
                     <Input
-                    value = "09"
-                    maxLength={2}
+                      value="09"
+                      maxLength={2}
                       placeholder="Month"
                       {...register("expiry_month")}
                       style={{
@@ -160,8 +152,8 @@ const DashFund = () => {
                     />
 
                     <Input
-                    value = "30"
-                              maxLength={2}
+                      value="30"
+                      maxLength={2}
                       placeholder="year"
                       {...register("expiry_year")}
                       style={{
@@ -179,7 +171,7 @@ const DashFund = () => {
                   <Label>CVV</Label>
                   <Ques>
                     <Input
-                    value = "123"
+                      value="123"
                       {...register("cvv")}
                       style={{ width: "70%", outline: "none", border: "none" }}
                     />
@@ -194,7 +186,6 @@ const DashFund = () => {
                 <Label>Amount</Label>
                 <Master>
                   <Input
-
                     {...register("amount")}
                     type="number"
                     placeholder="i.e. 50000"
@@ -248,7 +239,7 @@ const But = styled.button`
   margin-top: 15px;
   border-radius: 7px;
   color: white;
-cursor: pointer
+  cursor: pointer;
 `;
 
 const Iconn = styled.div`
