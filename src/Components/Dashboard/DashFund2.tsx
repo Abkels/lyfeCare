@@ -19,10 +19,8 @@ interface iData {
   expiry_year: string;
 }
 
-const lifeUrl = "https://codecrusaderslifecare.onrender.com/api";
 
 const DashFund = () => {
-  const dispatch = UseAppDispach();
   const User = useAppSelector((state: any) => state?.currentUser);
 
   const schema = yup
