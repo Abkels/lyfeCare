@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 // import pic from '../Images/4.jpg'
 import pic from '../../Images/42.png'
+
+
 const Hero = () => {
   return (
     <Container>

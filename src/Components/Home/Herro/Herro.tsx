@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Typewriter from "typewriter-effect";
 
 
 const Heroo = () => {
@@ -11,7 +12,32 @@ const Heroo = () => {
 
                 <Content>
 
-                    <Create>Be Your Own <br />Emergency Response</Create>
+                        <Create>Be Your Own <br /> 
+
+                            <span>
+                                <Typewriter 
+                                    options={{loop: true}}
+                                    onInit={(typewriter: any) => {
+
+                                        typewriter
+
+                                        .typeString("Emergency Response...")
+                                        .pauseFor(1000)
+                                        .deleteAll()
+                                        
+                                        .typeString("Health Insurance...")
+                                        .pauseFor(1000)
+                                        .deleteAll()
+                                        
+                                        .typeString("Emergency Hero...")
+                                        .pauseFor(1000)
+                                        .deleteAll()
+                                        .start();
+                                    }} 
+                                />
+                            </span>
+
+                        </Create>
 
                     <Mind>Safe Guard Yourself Against Health <br/>Emergencies..</Mind>
 
@@ -33,8 +59,6 @@ const Heroo = () => {
 export default Heroo;
 
 // const Content = styled.div``;
-
-// const Herro = styled.div``;
 
 const Mind = styled.div`
 color: white;
@@ -117,17 +141,23 @@ margin-top: 25px;
     line-height: 40px;
 }
 
-@media screen and (max-width: 347px) {
-    font-size: 22px;
+@media screen and (max-width: 375px) {
+    font-size: 24px;
+    line-height: 30px;
 }
 
 @media screen and (max-width: 320px) {
     line-height: 27px;
+    font-size: 21px;
+}
+
+span{
+    color: rgb(211, 211, 209);
 }
 `;
 
 const Content = styled.div`
-height: 100%;
+height: 60%;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -162,8 +192,12 @@ background-image: url("/images/docs.avif");
 background-size: cover;
 position: relative;
 background-attachment: fixed;
+display: flex;
+align-items: center;
+
 @media screen and (max-width: 768px) {
     height: 500px;
+    justify-content: center;
 }
 @media screen and (max-width: 347px) {
     height: 380px;
