@@ -378,17 +378,6 @@ const Quickk = styled.div`
   }
 `;
 
-const Black = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: #0000005b;
-`;
-
 const Bodyy = styled.div`
   width: calc(100% - 250px);
   height: calc(100vh - 70px);
@@ -430,17 +419,6 @@ const Fund = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
-`;
-
-const See = styled.div`
-  font-size: 12px;
-  font-weight: 700;
-  // font-weight: 650;
-  // color: rgba(123, 126, 126, 0.992);
-  // color: white;
-  cursor: pointer;
-  margin-left: 20px;
-  margin-top: 20px;
 `;
 
 const Names = styled.div`

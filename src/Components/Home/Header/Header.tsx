@@ -15,46 +15,48 @@ const Header = () => {
 
   const changeBg = () => {
     if (window.scrollY >= 70) {
-      setScroll(true)
+      setScroll(true);
     } else {
-      setScroll(false)
+      setScroll(false);
     }
   };
 
-  window.addEventListener("scroll", changeBg)
+  window.addEventListener("scroll", changeBg);
 
   return (
     <>
-
-    { scroll ? (
-      
-      <Container bg="white" style={{transition:"all 350ms ease-in-out"}} >
+      <Container
+        bg={scroll ? "white" : ""}
+        style={{ transition: "all 350ms ease-in-out" }}
+      >
         <Wrapper>
           <NavLink style={{ textDecoration: "none", color: "white" }} to="/">
-            <Logo cr="#8A2BE2">LIFECARE.</Logo>
+            <Logo cr={scroll ? "#8A2BE2" : ""}>LIFECARE.</Logo>
           </NavLink>
 
           <Navigations>
-            <Navs to="/" cl="#8A2BE2">
+            <Navs to="/" cl={scroll ? "#8A2BE2" : ""}>
               <RiHomeSmileFill />
               <span>Home</span>
             </Navs>
-            
-            <Navs to="/footer" cl="#8A2BE2">
+
+            <Navs to="/footer" cl={scroll ? "#8A2BE2" : ""}>
               <IoMdContact />
               <span>Contact us</span>
             </Navs>
 
-            <Navs to="/donateblood" cl="#8A2BE2">
+            <Navs to="/donateblood" cl={scroll ? "#8A2BE2" : ""}>
               <IoMdPricetags />
               <span>Donate Blood</span>
             </Navs>
 
-            <Navs to="/signup" cl="#8A2BE2">
+            <Navs to="/signup" cl={scroll ? "#8A2BE2" : ""}>
               <Button>Sign Up</Button>
             </Navs>
-            <Navs to="/signin" cl="#8A2BE2">
-              <Button style={{backgroundColor:"white", color:"#8A2BE2"}}>Sign In</Button>
+            <Navs to="/signin" cl={scroll ? "#8A2BE2" : ""}>
+              <Button style={{ backgroundColor: "white", color: "#8A2BE2" }}>
+                Sign In
+              </Button>
             </Navs>
           </Navigations>
 
@@ -65,77 +67,136 @@ const Header = () => {
           {show ? (
             <DropDown>
               <Holder>
-                <SideNavs style={{color:"white"}}   to="/"> <RiHomeSmileFill /> Home</SideNavs>
+                <SideNavs style={{ color: "white" }} to="/">
+                  {" "}
+                  <RiHomeSmileFill /> Home
+                </SideNavs>
                 {/* <SideNavs to="/about">About</SideNavs> */}
-                <SideNavs to="footer"> <IoMdContact /> Contact us</SideNavs>
-                <SideNavs to="/donateblood"> <IoMdPricetags /> Donate Blood</SideNavs>
+                <SideNavs to="footer">
+                  {" "}
+                  <IoMdContact /> Contact us
+                </SideNavs>
+                <SideNavs to="/donateblood">
+                  {" "}
+                  <IoMdPricetags /> Donate Blood
+                </SideNavs>
 
-                <SideNavs style={{width:"100px", backgroundColor:"white", color:"#8a2be2", height:"40px", borderRadius:"5px"}} to="/signup">Sign Up</SideNavs>
+                <SideNavs
+                  style={{
+                    width: "100px",
+                    backgroundColor: "white",
+                    color: "#8a2be2",
+                    height: "40px",
+                    borderRadius: "5px",
+                  }}
+                  to="/signup"
+                >
+                  Sign Up
+                </SideNavs>
 
-                <SideNavs style={{width:"100px", backgroundColor:"transparent", border:"1px solid white", height:"40px", borderRadius:"5px"}} to="/signin">Sign In</SideNavs>
+                <SideNavs
+                  style={{
+                    width: "100px",
+                    backgroundColor: "transparent",
+                    border: "1px solid white",
+                    height: "40px",
+                    borderRadius: "5px",
+                  }}
+                  to="/signin"
+                >
+                  Sign In
+                </SideNavs>
               </Holder>
             </DropDown>
           ) : null}
         </Wrapper>
       </Container>
-
-    ) : (
-      
-      <Container bg="">
-        <Wrapper>
-          <NavLink style={{ textDecoration: "none", color: "white" }} to="/">
-            <Logo cr="">LIFECARE.</Logo>
-          </NavLink>
-
-          <Navigations>
-            <Navs to="/" cl="white">
-              <RiHomeSmileFill />
-              <span>Home</span>
-            </Navs>
-            
-            <Navs to="/footer" cl="white">
-              <IoMdContact />
-              <span>Contact us</span>
-            </Navs>
-
-            <Navs to="/donateblood" cl="white">
-              <IoMdPricetags />
-              <span>Donate Blood</span>
-            </Navs>
-
-            <Navs to="/signup" cl="">
-              <Button>Sign Up</Button>
-            </Navs>
-            <Navs to="/signin" cl="">
-              <Button style={{backgroundColor:"white", color:"#8A2BE2"}}>Sign In</Button>
-            </Navs>
-          </Navigations>
-
-          <BurgerMenu onClick={toggle}>
-            <GiHamburgerMenu />
-          </BurgerMenu>
-
-          {show ? (
-            <DropDown>
-            <Holder>
-              <SideNavs style={{color:"white"}}  to="/"> <RiHomeSmileFill /> Home</SideNavs>
-              {/* <SideNavs to="/about">About</SideNavs> */}
-              <SideNavs to="footer"> <IoMdContact /> Contact us</SideNavs>
-              <SideNavs to="/donateblood"> <IoMdPricetags /> Donate Blood</SideNavs>
-              <SideNavs style={{width:"100px", backgroundColor:"white", color:"#8a2be2", height:"40px", borderRadius:"5px"}} to="/signup">Sign Up</SideNavs>
-              <SideNavs style={{width:"100px", backgroundColor:"transparent", border:"1px solid white", height:"40px", borderRadius:"5px"}} to="/signin">Sign In</SideNavs>
-            </Holder>
-            </DropDown>
-          ) : null}
-        </Wrapper>
-      </Container>
-    )}
-
     </>
   );
 };
 export default Header;
 
+// <Container bg="">
+//   <Wrapper>
+//     <NavLink style={{ textDecoration: "none", color: "white" }} to="/">
+//       <Logo cr="">LIFECARE.</Logo>
+//     </NavLink>
+
+//     <Navigations>
+//       <Navs to="/" cl="white">
+//         <RiHomeSmileFill />
+//         <span>Home</span>
+//       </Navs>
+
+//       <Navs to="/footer" cl="white">
+//         <IoMdContact />
+//         <span>Contact us</span>
+//       </Navs>
+
+//       <Navs to="/donateblood" cl="white">
+//         <IoMdPricetags />
+//         <span>Donate Blood</span>
+//       </Navs>
+
+//       <Navs to="/signup" cl="">
+//         <Button>Sign Up</Button>
+//       </Navs>
+//       <Navs to="/signin" cl="">
+//         <Button style={{ backgroundColor: "white", color: "#8A2BE2" }}>
+//           Sign In
+//         </Button>
+//       </Navs>
+//     </Navigations>
+
+//     <BurgerMenu onClick={toggle}>
+//       <GiHamburgerMenu />
+//     </BurgerMenu>
+
+//     {show ? (
+//       <DropDown>
+//         <Holder>
+//           <SideNavs style={{ color: "white" }} to="/">
+//             {" "}
+//             <RiHomeSmileFill /> Home
+//           </SideNavs>
+//           {/* <SideNavs to="/about">About</SideNavs> */}
+//           <SideNavs to="footer">
+//             {" "}
+//             <IoMdContact /> Contact us
+//           </SideNavs>
+//           <SideNavs to="/donateblood">
+//             {" "}
+//             <IoMdPricetags /> Donate Blood
+//           </SideNavs>
+//           <SideNavs
+//             style={{
+//               width: "100px",
+//               backgroundColor: "white",
+//               color: "#8a2be2",
+//               height: "40px",
+//               borderRadius: "5px",
+//             }}
+//             to="/signup"
+//           >
+//             Sign Up
+//           </SideNavs>
+//           <SideNavs
+//             style={{
+//               width: "100px",
+//               backgroundColor: "transparent",
+//               border: "1px solid white",
+//               height: "40px",
+//               borderRadius: "5px",
+//             }}
+//             to="/signin"
+//           >
+//             Sign In
+//           </SideNavs>
+//         </Holder>
+//       </DropDown>
+//     ) : null}
+//   </Wrapper>
+// </Container>
 const SideNavs = styled(NavLink)`
   text-decoration: none;
   width: 100%;
@@ -189,7 +250,7 @@ const SideNavs = styled(NavLink)`
 const DropDown = styled.div`
   height: 330px;
   width: 250px;
-  background: #8A2BE2;
+  background: #8a2be2;
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
@@ -223,7 +284,7 @@ const Button = styled.button`
   }
   /* align-items: center; */
   font-family: poppins;
-  background-color: #8A2BE2;
+  background-color: #8a2be2;
   border: none;
   outline: none;
   color: white;
@@ -231,7 +292,7 @@ const Button = styled.button`
   border-radius: 7px;
 `;
 
-const Container = styled.div<{bg: string}>`
+const Container = styled.div<{ bg: string }>`
   height: 80px;
   width: 100%;
   display: flex;
@@ -251,7 +312,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const Logo = styled.div<{cr: string}>`
+const Logo = styled.div<{ cr: string }>`
   color: ${(props) => props.cr};
   /* color: #a8ff37; */
   // width: 60px;
@@ -270,7 +331,7 @@ const Navigations = styled.div`
     display: none;
   }
 `;
-const Navs = styled(NavLink)<{cl: string}>`
+const Navs = styled(NavLink)<{ cl: string }>`
   color: ${(props) => props.cl};
   text-decoration: none;
   display: flex;
@@ -298,6 +359,6 @@ const BurgerMenu = styled.div`
     align-items: center;
     background-color: white;
     border-radius: 3px;
-    color: #8A2BE2;
+    color: #8a2be2;
   }
 `;
