@@ -4,7 +4,7 @@ import { BsFillCreditCardFill, BsQuestionCircleFill } from "react-icons/bs";
 import { RiLock2Fill } from "react-icons/ri";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { UseAppDispach, useAppSelector } from "../Global/Store";
+import { useAppSelector } from "../Global/Store";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { fundFromBank } from "../Api/Api";
@@ -18,7 +18,6 @@ interface iData {
   expiry_month: string;
   expiry_year: string;
 }
-
 
 const DashFund = () => {
   const User = useAppSelector((state: any) => state?.currentUser);
@@ -59,12 +58,7 @@ const DashFund = () => {
 
   // }
 
-  const {
-    handleSubmit,
-    formState: { errors },
-    reset,
-    register,
-  } = useForm<formData>({
+  const { handleSubmit, reset, register } = useForm<formData>({
     resolver: yupResolver(schema),
   });
 
