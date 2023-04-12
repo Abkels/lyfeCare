@@ -144,8 +144,6 @@ const Tap = styled.div`
   width: 80%;
 `;
 
-const UserInput = styled.input``;
-
 const Side = styled.form`
   width: 300px;
   height: 200px;
