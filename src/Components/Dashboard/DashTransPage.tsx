@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { UserData } from "../interface/interface";
-import { UseAppDispach, useAppSelector } from "../Global/Store";
-import { User } from "../Global/ReduxState";
-import { payTobank, sendToSpecialist } from "../Api/Api";
+import {  useAppSelector } from "../Global/Store";
+import { payTobank } from "../Api/Api";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
