@@ -35,17 +35,17 @@ const Header = () => {
           </NavLink>
 
           <Navigations>
-            <Navs to="/" cl={scroll ? "#8A2BE2" : ""}>
+            <Navs to="/" cl={scroll ? "#8A2BE2" : "white"}>
               <RiHomeSmileFill />
               <span>Home</span>
             </Navs>
 
-            <Navs to="/footer" cl={scroll ? "#8A2BE2" : ""}>
+            <Navs to="/footer" cl={scroll ? "#8A2BE2" : "white"}>
               <IoMdContact />
               <span>Contact us</span>
             </Navs>
 
-            <Navs to="/donateblood" cl={scroll ? "#8A2BE2" : ""}>
+            <Navs to="/donateblood" cl={scroll ? "#8A2BE2" : "white"}>
               <IoMdPricetags />
               <span>Donate Blood</span>
             </Navs>
