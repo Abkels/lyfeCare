@@ -47,9 +47,7 @@ const Heroo = () => {
 
           {/* <p style={{fontWeight: "bold", color:"white", zIndex:"1"}}>LIFECARE... Giving lifeline to your deadline...</p> */}
 
-          <Link style={{ textDecoration: " none" }} to={"/signup"}>
-            <Get>Get Started Today</Get>
-          </Link>
+          <Get to={"/signup"}>Get Started Today</Get>
         </Content>
       </Herro>
     </>
@@ -80,19 +78,22 @@ const Mind = styled.div`
   }
 `;
 
-const Get = styled.button`
+const Get = styled(Link)`
   width: 160px;
-  height: 40px;
+  text-decoration: none;
+  /* height: 40px; */
   border: none;
   background-color: blueviolet;
   color: white;
   border-radius: 7px;
+  padding: 10px;
   z-index: 1;
   font-weight: 600;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   cursor: pointer;
+  transition: all 550ms;
   :hover {
-    background-color: #3a155c;
+    transform: scale(0.9);
   }
   @media screen and (max-width: 347px) {
     width: 130px;
