@@ -38,16 +38,7 @@ export const signup = async ({
     });
 };
 
-export const verifyOtp = async (otp: string, id: string) => {
-  return await axios
-    // .post(`${lifeUrl}/verifyuser/${id}`, {
-    .post(`${lifeUrl}/verifyuser/${id}`, {
-      otp,
-    })
-    .then((res) => {
-      return res.data;
-    });
-};
+
 
 export const createSpecialist = async ({
   name,
