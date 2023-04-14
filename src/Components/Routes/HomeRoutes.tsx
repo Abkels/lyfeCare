@@ -12,17 +12,7 @@ import InputOTP from "../Auth/InputOTP";
 import UserSignUp3 from "../Auth/UserSignUp3";
 import ConsultantSignUp2 from "../Auth/ConsultantSignup2";
 
-
-// type Props = {
-//   value: string;
-//   valueLength: number;
-//   onChange: (value: string) => void;
-// };
-
 const HomeRoutes = () => {
-
-  const [otp, setOtp] = useState('1234');
-  const onChange = (value: string) => setOtp(value);
   const element = useRoutes([
     {
       path: "/",
@@ -38,7 +28,7 @@ const HomeRoutes = () => {
     },
     {
       path: "/otp",
-      element: <InputOTP value={otp} valueLength={4} onChange={onChange}/>,
+      element: <InputOTP />,
     },
     {
       path: "/usersignup2",
@@ -69,10 +59,9 @@ const HomeRoutes = () => {
       element: <HospitalSignUp />,
     },
     {
-      path: '*',
-      element: <h1>Page Not Found</h1>
-    }
-    
+      path: "*",
+      element: <h1>Page Not Found</h1>,
+    },
   ]);
   return element;
 };

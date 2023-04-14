@@ -127,11 +127,14 @@ const ConsultantSignUp = () => {
 export default ConsultantSignUp;
 
 const SeqNum = styled.h6`
-padding: 4px 7px;
-border-radius:50%;
-text-align:center;
-border: 1px solid #8A2BE2;
-color: #8A2BE2;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #8a2be2;
+  color: #8a2be2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Seq = styled.div`

@@ -4,23 +4,19 @@ import pic from "../Images/undraw_medical_care_movn.svg";
 import { NavLink } from "react-router-dom";
 
 const ChooseSignUp = () => {
-
-  
   return (
     <Container>
       <Head>Health Insurance At Your Saving Pace...</Head>
       <Wrapper>
-
         <Right>
           <Box>
             {/* <p>A platform for All</p> */}
 
             <Input to="/usersignup1">Sign Up as a User</Input>
 
-            <Input to="/signconsultant">Sign up as a Consultant</Input>
+            <Input to="/consultantsignup">Sign up as a Consultant</Input>
 
             <Input to="/signhospital">Sign up as a Hospital</Input>
-
           </Box>
         </Right>
 
@@ -40,13 +36,13 @@ const Input = styled(NavLink)`
   // border: 2px light gray;
   border-radius: 5px;
   font-weight: 500;
-  box-shadow: 0 0 1px #8A2BE2;
+  box-shadow: 0 0 1px #8a2be2;
   margin-top: 10px;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8A2BE2;
+  color: #8a2be2;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
@@ -60,7 +56,7 @@ const Input = styled(NavLink)`
 const Box = styled.div`
   height: 300px;
   width: 300px;
-  box-shadow: 0 0 2px #8A2BE2;
+  box-shadow: 0 0 2px #8a2be2;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -81,9 +77,9 @@ const Right = styled.div`
   align-items: center;
   justify-content: center;
 
- @media screen and (max-width: 768px) {
-  width: 100%
- }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const Img = styled.img`
   height: 300px;
@@ -94,10 +90,10 @@ const Left = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
- 
- @media screen and (max-width: 768px) {
-  display: none;
- }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 const Wrapper = styled.div`
   width: 100%;
@@ -109,7 +105,7 @@ const Wrapper = styled.div`
 const Head = styled.div`
   height: 25vh;
   width: 100%;
-  background-color:#8A2BE2;
+  background-color: #8a2be2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,23 +113,23 @@ const Head = styled.div`
   font-weight: 500;
   color: #ffffff;
   border-bottom-left-radius: 30%;
- 
- @media screen and (max-width: 768px) {
-  font-size: 30px;
-  text-align: center;
- }
 
- @media screen and (max-width: 425px) {
-  font-size: 25px;
- }
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+    text-align: center;
+  }
 
- @media screen and (max-width: 375px) {
-  font-size: 22px;
- }
+  @media screen and (max-width: 425px) {
+    font-size: 25px;
+  }
 
- @media screen and (max-width: 375px) {
-  font-size: 16px;
- }
+  @media screen and (max-width: 375px) {
+    font-size: 22px;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 16px;
+  }
 `;
 
 const Container = styled.div`
