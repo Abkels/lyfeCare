@@ -2,9 +2,30 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import pic from "../Images/otp.svg";
 import OtpInput from "react-otp-input";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import { UserData } from "../interface/interface";
+import { UseAppDispach, useAppSelector } from "../Global/Store";
+import { User } from "../Global/ReduxState";
+import { verifyOtp } from "../Api/Api";
 
 const InputOTP = () => {
-  const [otp, setOtp] = useState("");
+  const [otp, setOtp] = useState<string>("");
+
+  const getUser = useAppSelector((state) => state?.currentUser);
+
+  const posting = useMutation({
+    mutationFn: (otp: string) => verifyOtp(otp, getUser?._id!),
+  });
+
+  const handleSubmit = () => {
+    posting.mutate({
+      otp,
+    });
+  };
 
   return (
     <div>
@@ -51,7 +72,7 @@ const InputOTP = () => {
                 />
               </Inputs>
 
-              <Button>Enter</Button>
+              <Button onClick={handleSubmit}>Submit</Button>
 
               <p
                 style={{
@@ -190,7 +211,7 @@ const Inputs = styled.div`
   //   }
 `;
 
-const Form = styled.form`
+const Form = styled.div`
   width: 270px;
   height: 300px;
   box-shadow: 0 0 3px #8a2be2;
