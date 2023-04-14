@@ -13,11 +13,12 @@ import { User } from "../Global/ReduxState";
 import { signup } from "../Api/Api";
 import { Link } from "react-router-dom";
 import pic from "../Images/sign-up.svg";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const dispatch = UseAppDispach();
   const navigate = useNavigate();
-  
+
   const schema = yup
     .object({
       userName: yup.string().required(),
@@ -35,7 +36,7 @@ const SignUp = () => {
 
     onSuccess: (myData: any) => {
       dispatch(User(myData.data));
-      console.log(myData.data)
+      console.log(myData.data);
     },
   });
 
@@ -49,9 +50,24 @@ const SignUp = () => {
   });
 
   const Submit = handleSubmit(async (data) => {
-    posting.mutate(data);
+    posting
+      .mutate(data)
+
     reset();
+
     navigate("/otp");
+
+    Swal.fire({
+      title: "Account Created. Pls, check your mail for OTP verification",
+      icon: "success",
+    }).catch((err) => {
+      Swal.fire({
+        title: "an error occured",
+        icon: "error",
+        text: `${err.response?.data?.message}`,
+      });
+    });
+    
   });
 
   //
@@ -61,17 +77,17 @@ const SignUp = () => {
         <Hold>
           <Left>
             <Form onSubmit={Submit}>
-
-            <Seq>
-                <SeqNum style={{color:"white", backgroundColor:"#8A2BE2"}}>1</SeqNum>
+              <Seq>
+                <SeqNum style={{ color: "white", backgroundColor: "#8A2BE2" }}>
+                  1
+                </SeqNum>
                 <div> ----- </div>
                 <SeqNum>2</SeqNum>
                 <div> ----- </div>
                 <SeqNum>3</SeqNum>
                 <div> ----- </div>
                 <SeqNum>4</SeqNum>
-            </Seq>
-
+              </Seq>
 
               <div
                 style={{
@@ -80,7 +96,8 @@ const SignUp = () => {
                   fontWeight: "700",
                   marginBottom: "20px",
                   textAlign: "center",
-                }}>
+                }}
+              >
                 User Sign Up
               </div>
 
@@ -116,7 +133,6 @@ const SignUp = () => {
                 {errors?.confirmPassword && errors?.confirmPassword?.message}
               </p>
 
-
               <Button type="submit">Sign Up</Button>
 
               <Link style={{ textDecoration: "none" }} to={"/signin"}>
@@ -148,16 +164,16 @@ const SeqNum = styled.h6`
 `;
 
 const Seq = styled.div`
-width: 100%;
-height: 30px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 20px;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 
-div{
-color: #8A2BE2;
-}
+  div {
+    color: #8a2be2;
+  }
 `;
 
 const RightImg = styled.img`
@@ -187,7 +203,7 @@ const Already = styled.div`
 const Button = styled.button`
   width: 105%;
   height: 40px;
-  background: #8A2BE2;
+  background: #8a2be2;
   color: white;
   border: none;
   border-radius: 7px;
@@ -195,8 +211,8 @@ const Button = styled.button`
   transition: all 350ms;
   :hover {
     background-color: transparent;
-    border: 1px solid #8A2BE2;
-    color: #8A2BE2;
+    border: 1px solid #8a2be2;
+    color: #8a2be2;
   }
 `;
 
@@ -204,14 +220,13 @@ const Input = styled.input`
   width: 100%;
   height: 40px;
   border: none;
-  box-shadow: 0 0 2px #8A2BE2;
+  box-shadow: 0 0 2px #8a2be2;
   border-radius: 7px;
   padding-left: 10px;
-  // outline: #8A2BE2;
 
   p {
     font-size: 10px;
-  margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   @media screen and (max-width: 425px) {
@@ -225,8 +240,8 @@ const Input = styled.input`
 
 const Form = styled.form`
   width: 270px;
-  height: 400px;
-  box-shadow: 0 0 3px #8A2BE2;
+  height: 500px;
+  box-shadow: 0 0 3px #8a2be2;
   border-radius: 10px 0 10px 0;
   padding: 30px;
   // padding-right: 40px;
@@ -244,7 +259,7 @@ const Form = styled.form`
     box-shadow: none;
   }
   @media screen and (max-width: 375px) {
-  width: 285px;
+    width: 285px;
     // padding: 10px;
     // padding-right: 20px;
     display: flex;
