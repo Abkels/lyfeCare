@@ -2,29 +2,37 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import pic from "../Images/otp.svg";
 import OtpInput from "react-otp-input";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query";
-import { UserData } from "../interface/interface";
-import { UseAppDispach, useAppSelector } from "../Global/Store";
-import { User } from "../Global/ReduxState";
-import { verifyOtp } from "../Api/Api";
+
+import { useAppSelector } from "../Global/Store";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const InputOTP = () => {
-  const [otp, setOtp] = useState<string>("");
+  const [otp, setOtp] = useState("");
 
   const getUser = useAppSelector((state) => state?.currentUser);
 
-  const posting = useMutation({
-    mutationFn: (otp: string) => verifyOtp(otp, getUser?._id!),
-  });
-
-  const handleSubmit = () => {
-    posting.mutate({
-      otp,
-    });
+  const verifyOtp = async () => {
+    const lifeUrl = "https://codecrusaderslifecare.onrender.com/api";
+    return await axios
+      // .post(`${lifeUrl}/verifyuser/${id}`, {
+      .post(`${lifeUrl}/verifyuser/${getUser?._id}`, {
+        otp,
+      })
+      .then((res) => {
+        Swal.fire({
+          title: "verified",
+          icon: "success",
+        });
+        return res.data;
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: "opps...Something went wrong",
+          icon: "error",
+          text: `${err.response?.data?.message}`,
+        });
+      });
   };
 
   return (
@@ -72,7 +80,7 @@ const InputOTP = () => {
                 />
               </Inputs>
 
-              <Button onClick={handleSubmit}>Submit</Button>
+              <Button onClick={verifyOtp}>Submit</Button>
 
               <p
                 style={{
