@@ -179,17 +179,17 @@ const Black = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #0e0e0e53;
+  background-color: #0e0e0e76;
 
   @media screen and (max-width: 768px) {
-    background-color: #0e0e0e85;
+    background-color: #0e0e0e84;
   }
 `;
 
 const Herro = styled.div`
   width: 100%;
   height: 100vh;
-  background-image: url("/images/docs.avif");
+  background-image: url("/images/doctor.jpg");
   background-size: cover;
   position: relative;
   background-attachment: fixed;
