@@ -21,19 +21,18 @@ const InputOTP = () => {
         otp,
       })
       .then((res) => {
+        navigate("/usersignup2");
         Swal.fire({
           title: "verified",
           icon: "success",
         });
-        navigate("/usersignup2");
-
         return res.data;
       })
       .catch((err) => {
         Swal.fire({
-          title: "ooops!...Something went wrong",
+          title: "wrong OTP",
           icon: "error",
-          text: `${err.response?.data?.message}`,
+          // text: `${err.response?.data?.message}`,
         });
       });
   };
