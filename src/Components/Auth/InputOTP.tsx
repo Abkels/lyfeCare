@@ -6,12 +6,13 @@ import OtpInput from "react-otp-input";
 import { useAppSelector } from "../Global/Store";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const InputOTP = () => {
   const [otp, setOtp] = useState("");
 
   const getUser = useAppSelector((state) => state?.currentUser);
-
+  const navigate = useNavigate();
   const verifyOtp = async () => {
     const lifeUrl = "https://codecrusaderslifecare.onrender.com/api";
     return await axios
@@ -24,11 +25,13 @@ const InputOTP = () => {
           title: "verified",
           icon: "success",
         });
+        navigate("/usersignup2");
+
         return res.data;
       })
       .catch((err) => {
         Swal.fire({
-          title: "opps...Something went wrong",
+          title: "ooops!...Something went wrong",
           icon: "error",
           text: `${err.response?.data?.message}`,
         });

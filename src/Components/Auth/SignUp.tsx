@@ -18,6 +18,7 @@ import Swal from "sweetalert2";
 const SignUp = () => {
   const dispatch = UseAppDispach();
   const navigate = useNavigate();
+  
 
   const schema = yup
     .object({
