@@ -4,7 +4,6 @@ import styled from "styled-components";
 import DashAppointment from "../Dashboard/DashAppoint";
 import DashFund from "../Dashboard/DashFund2";
 import DashFundWallet from "../Dashboard/DashFundWallet";
-// import DashBoardHome from "../Dashboard/DashBoardHome";
 import DashHeader from "../Dashboard/DashHeader";
 import DashHMO from "../Dashboard/Dashhmo";
 import DashHomeComp from "../Dashboard/DashHome/DashHomeComp";
@@ -15,8 +14,6 @@ import DashTransPage from "../Dashboard/DashTransPage";
 
 const DashBoardRoute = () => {
 
-    
-    // const agentSelector = useAppSelector((state) => state.Agent)
 
     const element = useRoutes([
         {
@@ -56,25 +53,15 @@ const DashBoardRoute = () => {
 
         <Body>
 
-         {/* {
-                 agentSelector?.role === "Agent" ? */}
                      <Head>
                      <DashHeader />
                      </Head>
-                    {/* :
-                        null
-                } */}
 
                 <Bottom>
 
-                {/* {
-                     agentSelector?.role === "Agent" ? */}
                      <Side>
                      <DashSiderBar />
                      </Side>
-                     {/* : 
-                       null
-                     } */}
 
                     <DashRoute>
                       {element}
