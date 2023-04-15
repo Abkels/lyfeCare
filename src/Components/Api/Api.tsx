@@ -38,6 +38,23 @@ export const signup = async ({
     });
 };
 
+export const userSignup2 = async ({
+  fullName,
+  phoneNumber,
+  genotype,
+ bloodGroup,
+}: any, id: any) => {
+  return await axios
+    .patch(`${lifeUrl}/registerUserPageTwo/${id}`, {
+      fullName,
+      phoneNumber,
+      genotype,
+      bloodGroup,
+    })
+    .then((res) => {
+      return res.data;
+    });
+};
 
 
 export const createSpecialist = async ({

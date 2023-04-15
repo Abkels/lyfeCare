@@ -128,7 +128,7 @@ color: isActive ? "#a8ff37" : "white",
 
 
 
-          <Logo>LYFECARE.</Logo>
+            <Logo src="/images/LyfeCareLogo.png" />
 
         <User>
 
@@ -302,15 +302,11 @@ margin-right: 25px;
 }
 `;
 
-const Logo = styled.h5`
-  font-size: 25px;
-  // color: #a8ff37;
-  color: #8A2BE2;
-  font-weight: 700;
-  margin-left: 25px;
+const Logo = styled.img`
+  width: 120px;
 
-  @media screen and (max-width: 375px) {
-    font-size: 17px;
+  @media (max-width: 510px) {
+    width: 45px;
   }
 `;
 

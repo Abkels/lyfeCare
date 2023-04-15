@@ -82,7 +82,6 @@ const DashTransPage = () => {
 
   const sendToFriend = handleSubmit(async (data) => {
     await axios
-      // .patch(`${lifeUrl}/sendtospecialist/${user?._id}`, data)
       .patch(`${lifeUrl}/transfer/${userOne?._id}`, data)
       .then((res) => {
         Swal.fire({

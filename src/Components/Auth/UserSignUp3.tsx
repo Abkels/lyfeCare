@@ -1,10 +1,60 @@
 import React from 'react';
 import styled from "styled-components";
 import pic from "../Images/sign-up.svg";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import { UseAppDispach, useAppSelector } from "../Global/Store";
+import axios from "axios";
+import Swal from "sweetalert2";
 
+const lifeUrl = "https://codecrusaderslifecare.onrender.com/api";
 
 const UserSignUp3 = () => {
+  const navigate = useNavigate();
     
+  const getUser = useAppSelector ((state) => state?.currentUser);
+  const schema = yup
+  .object({
+    next_of_kin: yup.string().required(),
+    phoneNo_of_next_of_kin: yup.string().required(),
+  }).required();
+
+  type formData = yup.InferType<typeof schema>;
+
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = handleSubmit(async (data) =>{
+    await axios
+    .patch(
+      `${lifeUrl}/pagethreeregister/${getUser?._id}`,data
+    )
+    .then((res) => {
+      Swal.fire({
+        title: "Registration sucessful",
+        // html: "redirecting to login",
+        timer: 3000,
+        timerProgressBar: true,
+
+        willClose: () => {
+          navigate("/dashboardhome");
+  
+        },
+      });
+    })
+
+    console.log("this", data)
+  })
+
   return (
     <div>
     <Body>
@@ -17,7 +67,7 @@ const UserSignUp3 = () => {
 
         <Left>
 
-          <Form>
+          <Form onSubmit={onSubmit}>
 
             <Seq>
                 <SeqNum>1</SeqNum>
@@ -29,15 +79,9 @@ const UserSignUp3 = () => {
                 <SeqNum style={{color:"white", backgroundColor:"#8A2BE2"}}>4</SeqNum>
             </Seq>
 
-            <Input type="text" placeholder="Bank Name" />
+            <Input type="text" placeholder="Name of Next of Kin" {...register("next_of_kin")} />
 
-
-            <Input type="text" placeholder="Bank Acc Num" />
-
-
-            <Input type="text" placeholder="Name of Next of Kin"  />
-
-            <Input type="text" placeholder="Phone Num of Next of Kin"  />
+            <Input type="text" placeholder="Phone Num of Next of Kin" {...register("phoneNo_of_next_of_kin")} />
 
             <Button type="submit">Complete Registration</Button>
             
@@ -158,7 +202,7 @@ const Form = styled.form`
     justify-content: center;
   }
   @media screen and (max-width: 768px) {
-    height: 400px;
+    height: 300px;
   }
 `;
 
