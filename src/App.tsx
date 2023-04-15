@@ -7,7 +7,6 @@ import DashBoardRoute from "./Components/Routes/DashBoardRoute";
 import HomeRoutes from "./Components/Routes/HomeRoutes";
 
 function App() {
-
   const getUser = useAppSelector((state) => state?.currentUser);
 
   const consultant = useAppSelector((state) => state?.consultUser);
@@ -15,21 +14,15 @@ function App() {
   return (
     <>
       <div>
-        {
-        typeof 
-        getUser?.name 
-          === "string" 
-            ? <DashBoardRoute /> : <HomeRoutes />
-        }
+        {typeof getUser?.fullName === "string" ? (
+          <DashBoardRoute />
+        ) : (
+          <HomeRoutes />
+        )}
       </div>
 
       <div>
-        {
-        typeof 
-        consultant?.name  
-          === "string"
-           ? <ConsultRoutes /> : null
-        }
+        {typeof consultant?.name === "string" ? <ConsultRoutes /> : null}
       </div>
     </>
   );

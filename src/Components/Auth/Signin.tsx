@@ -10,15 +10,22 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { UseAppDispach } from "../Global/Store";
+import { UseAppDispach, useAppSelector } from "../Global/Store";
 import { User } from "../Global/ReduxState";
 import { signin } from "../Api/Api";
 import { AnyAction } from "@reduxjs/toolkit";
+import Swal from "sweetalert2";
 
 const Signin = () => {
   const dispatch = UseAppDispach();
   const navigate = useNavigate();
-  const schema = yup.object({email: yup.string().required(),}).required();
+
+  const schema = yup
+    .object({
+      email: yup.string().required(),
+      password: yup.string().required(),
+    })
+    .required();
 
   type formData = yup.InferType<typeof schema>;
 
@@ -26,10 +33,9 @@ const Signin = () => {
     mutationKey: ["lifecareUser"],
     mutationFn: signin,
 
-    onSuccess: (myData:any) => {
+    onSuccess: (myData: any) => {
       dispatch(User(myData.data));
-      // console.log("here",myData.data);
-      
+      console.log("here", myData.data);
     },
   });
 
@@ -44,9 +50,24 @@ const Signin = () => {
 
   const Submit = handleSubmit(async (data) => {
     posting.mutate(data);
-    reset();
-    navigate("/dashboardhome");
+
+    // reset();
+    // navigate("/dashboardhome");
+
+    Swal.fire({
+      title: "Signed in successfully",
+      // html: "redirecting to login",
+      timer: 3000,
+      timerProgressBar: true,
+
+      willClose: () => {
+        navigate("/dashboardhome");
+      },
+    });
   });
+
+  const user = useAppSelector((state) => state?.currentUser);
+  // console.log("herr", user?.fullName);
 
   return (
     <>
@@ -67,15 +88,20 @@ const Signin = () => {
                   fontWeight: "700",
                   marginBottom: "20px",
                   textAlign: "center",
-                }}>
+                }}
+              >
                 User Sign in
               </div>
 
               <Input type="text" placeholder="Email" {...register("email")} />
               <p>{errors?.email && errors?.email?.message}</p>
 
-              {/* <Input type="password" placeholder="Password" {...register("email")} /> */}
-              {/* <p>{errors?.password && errors?.password?.message}</p> */}
+              <Input
+                type="password"
+                placeholder="Password"
+                {...register("password")}
+              />
+              <p>{errors?.password && errors?.password?.message}</p>
 
               <Button type="submit">Sign in</Button>
 
@@ -119,7 +145,7 @@ const Already = styled.div`
 const Button = styled.button`
   width: 105%;
   height: 40px;
-  background: #8A2BE2;
+  background: #8a2be2;
   color: white;
   border: none;
   border-radius: 7px;
@@ -134,8 +160,7 @@ const Input = styled.input`
   width: 100%;
   height: 40px;
   border: none;
-  box-shadow: 0 0 2px #8A2BE2;
-  margin-bottom: 20px;
+  box-shadow: 0 0 2px #8a2be2;
   border-radius: 7px;
   padding-left: 10px;
   outline: none;
@@ -153,10 +178,16 @@ const Input = styled.input`
 const Form = styled.form`
   width: 270px;
   height: 300px;
-  box-shadow: 0 0 3px #8A2BE2;
+  box-shadow: 0 0 3px #8a2be2;
   border-radius: 10px 0 10px 0;
   padding: 30px;
   padding-right: 40px;
+
+  p {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+
   @media screen and (max-width: 425px) {
     width: 310px;
     padding: 20px;

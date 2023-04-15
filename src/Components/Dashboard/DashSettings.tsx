@@ -4,7 +4,9 @@ import { FaUserAlt } from "react-icons/fa";
 import { useAppSelector } from "../Global/Store";
 
 const DashSettings: React.FC = () => {
+  
   const user = useAppSelector((state) => state?.currentUser);
+
   return (
     <Container>
       <Right>
@@ -14,9 +16,13 @@ const DashSettings: React.FC = () => {
             <FaUserAlt />
           </Image>
           <Hold>
-            <Name>{user?.name.toUpperCase()}</Name>
+            <Name>
+              {user?.fullName.toUpperCase()}
+            </Name>
 
-            <Email>{user?.email}</Email>
+            <Email>
+              {user?.email}
+            </Email>
           </Hold>
         </Identity>
         <Content>
