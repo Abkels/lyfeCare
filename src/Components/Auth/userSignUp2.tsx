@@ -63,9 +63,6 @@ const UserSignUp2 = () => {
         });
       })
 
-    // reset();
-    // navigate("/usersignup3")
-    // console.log("this is", data)
   });
 
 

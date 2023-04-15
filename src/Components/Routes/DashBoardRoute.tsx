@@ -14,8 +14,6 @@ import DashTransPage from "../Dashboard/DashTransPage";
 
 const DashBoardRoute = () => {
 
-    
-    // const agentSelector = useAppSelector((state) => state.Agent)
 
     const element = useRoutes([
         {
