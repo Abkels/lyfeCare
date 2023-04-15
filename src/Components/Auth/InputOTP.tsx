@@ -12,7 +12,9 @@ const InputOTP = () => {
   const [otp, setOtp] = useState("");
 
   const getUser = useAppSelector((state) => state?.currentUser);
+  
   const navigate = useNavigate();
+
   const verifyOtp = async () => {
     const lifeUrl = "https://codecrusaderslifecare.onrender.com/api";
     return await axios

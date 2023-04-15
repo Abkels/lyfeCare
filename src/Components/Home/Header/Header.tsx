@@ -31,7 +31,7 @@ const Header = () => {
       >
         <Wrapper>
           <NavLink style={{ textDecoration: "none", color: "white" }} to="/">
-            <Logo cr={scroll ? "#8A2BE2" : ""}>LIFECARE.</Logo>
+            <Logo src="/images/lyfeCareLogo.jpg" />
           </NavLink>
 
           <Navigations>
@@ -312,14 +312,10 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const Logo = styled.div<{ cr: string }>`
-  color: ${(props) => props.cr};
-  /* color: #a8ff37; */
-  // width: 60px;
-  font-weight: bold;
-  img {
-    width: 100%;
-  }
+
+const Logo = styled.img`
+  width: 150px;
+
   @media (max-width: 510px) {
     width: 45px;
   }

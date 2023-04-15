@@ -18,9 +18,23 @@ function App() {
 
   return (
     <>
-      <div>{getUser?.name ? <DashBoardRoute /> : <HomeRoutes />}</div>
+      <div>
+        {
+        typeof 
+        getUser?.name 
+          === "string" 
+            ? <DashBoardRoute /> : <HomeRoutes />
+        }
+      </div>
 
-      <div>{consultant?.name ? <ConsultRoutes /> : null}</div>
+      <div>
+        {
+        typeof 
+        consultant?.name  
+          === "string"
+           ? <ConsultRoutes /> : null
+        }
+      </div>
     </>
   );
   // route

@@ -1,10 +1,74 @@
 import React from 'react';
 import styled from "styled-components";
 import pic from "../Images/sign-up.svg";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import { UseAppDispach, useAppSelector } from "../Global/Store";
+import { User } from "../Global/ReduxState";
+import { userSignup2 } from '../Api/Api';
+import { UserData } from '../interface/interface';
+import axios from "axios";
+import Swal from "sweetalert2";
 
 
-const UserSignUp2 = () => {
+const lifeUrl = "https://codecrusaderslifecare.onrender.com/api";
+
+
+const UserSignUp2 = () => { 
+    const dispatch = UseAppDispach();
+    const navigate = useNavigate();
+
+    const getUser = useAppSelector((state) => state?.currentUser);
+
+    const schema = yup
+    .object({
+      fullName: yup.string().required(),
+      phoneNumber: yup.string().required(),
+      genotype: yup.string().required(),
+      bloodGroup: yup.string().required(),
+    })
+    .required();
+
+    type formData = yup.InferType<typeof schema>;
+
+    const {
+      handleSubmit,
+      formState: { errors },
+      reset,
+      register,
+    } = useForm<formData>({
+      resolver: yupResolver(schema),
+    });
     
+
+  const onSubmit = handleSubmit(async (data) => {
+    await axios
+      .patch(
+        `${lifeUrl}/pagetworegister/${getUser?._id}`,
+        data
+      )
+      .then((res) => {
+        Swal.fire({
+          title: "loading next page...",
+          // html: "redirecting to login",
+          timer: 2000,
+          timerProgressBar: true,
+  
+          willClose: () => {
+            navigate("/usersignup3");
+          },
+        });
+      })
+
+    // reset();
+    // navigate("/usersignup3")
+    // console.log("this is", data)
+  });
+
+
   return (
     <div>
     <Body>
@@ -16,7 +80,7 @@ const UserSignUp2 = () => {
 
 
         <Left>
-          <Form>
+          <Form onSubmit={onSubmit}>
 
             <Seq>
                 <SeqNum>1</SeqNum>
@@ -28,14 +92,22 @@ const UserSignUp2 = () => {
                 <SeqNum>4</SeqNum>
             </Seq>
 
-            <Input type="text" placeholder="Full Name" />
+            <Input 
+              type="text" 
+              placeholder="Full Name"
+              {...register("fullName")} />
 
-            <Input type="number" placeholder="Phone Number" />
+            <Input 
+              type="number" 
+              placeholder="Phone Number" 
+              {...register("phoneNumber")} />
 
-            <Input type="text" placeholder="Genotype" />
+            <Input type="text" placeholder="Genotype"
+              {...register("genotype")} />
 
 
-            <Input type="text" placeholder="Blood Group"  />
+            <Input type="text" placeholder="Blood Group"  
+              {...register("bloodGroup")}  />
 
             <Button type="submit">Continue</Button>
             
