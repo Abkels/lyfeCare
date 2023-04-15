@@ -15,6 +15,7 @@ import { GetOneUser } from "../../Api/Api";
 import { TbCurrencyNaira } from "react-icons/tb";
 
 const DashHome1 = () => {
+  
   const getUser = useAppSelector((state: any) => state?.currentUser);
 
   const { data } = useQuery({

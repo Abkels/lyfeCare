@@ -38,12 +38,10 @@ export const signup = async ({
     });
 };
 
-export const userSignup2 = async ({
-  fullName,
-  phoneNumber,
-  genotype,
- bloodGroup,
-}: any, id: any) => {
+export const userSignup2 = async (
+  { fullName, phoneNumber, genotype, bloodGroup }: any,
+  id: any
+) => {
   return await axios
     .patch(`${lifeUrl}/registerUserPageTwo/${id}`, {
       fullName,
@@ -55,7 +53,6 @@ export const userSignup2 = async ({
       return res.data;
     });
 };
-
 
 export const createSpecialist = async ({
   name,
@@ -80,13 +77,14 @@ export const createSpecialist = async ({
     });
 };
 
-export const signin = async ({ email }: any) => {
+export const signin = async ({ email, password }: any) => {
   return await axios
     .post(
       `${lifeUrl}/login`,
       // .post(`http://localhost:2001/api/login`,
       {
         email,
+        password,
       }
     )
     .then((res) => {

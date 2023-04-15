@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 import pic from "../Images/sign-up.svg";
 import * as yup from "yup";
@@ -14,13 +14,14 @@ const lifeUrl = "https://codecrusaderslifecare.onrender.com/api";
 
 const UserSignUp3 = () => {
   const navigate = useNavigate();
-    
-  const getUser = useAppSelector ((state) => state?.currentUser);
+
+  const getUser = useAppSelector((state) => state?.currentUser);
   const schema = yup
-  .object({
-    next_of_kin: yup.string().required(),
-    phoneNo_of_next_of_kin: yup.string().required(),
-  }).required();
+    .object({
+      next_of_kin: yup.string().required(),
+      phoneNo_of_next_of_kin: yup.string().required(),
+    })
+    .required();
 
   type formData = yup.InferType<typeof schema>;
 
@@ -33,66 +34,66 @@ const UserSignUp3 = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = handleSubmit(async (data) =>{
+  const onSubmit = handleSubmit(async (data) => {
     await axios
-    .patch(
-      `${lifeUrl}/pagethreeregister/${getUser?._id}`,data
-    )
-    .then((res) => {
-      Swal.fire({
-        title: "Registration sucessful",
-        // html: "redirecting to login",
-        timer: 3000,
-        timerProgressBar: true,
+      .patch(`${lifeUrl}/pagethreeregister/${getUser?._id}`, data)
+      .then((res) => {
+        Swal.fire({
+          title: "Registration successful",
+          // html: "redirecting to login",
+          timer: 3000,
+          timerProgressBar: true,
 
-        willClose: () => {
-          navigate("/dashboardhome");
-  
-        },
+          willClose: () => {
+            navigate("/dashboardhome");
+          },
+        });
       });
-    })
 
-    console.log("this", data)
-  })
+    console.log("this", data);
+  });
 
   return (
     <div>
-    <Body>
-      <Hold>
+      <Body>
+        <Hold>
+          <Right>
+            <RightImg src={pic} />
+          </Right>
 
-        <Right>
-        <RightImg src={pic} />
-        </Right>
-
-
-        <Left>
-
-          <Form onSubmit={onSubmit}>
-
-            <Seq>
+          <Left>
+            <Form onSubmit={onSubmit}>
+              <Seq>
                 <SeqNum>1</SeqNum>
                 <div> ----- </div>
                 <SeqNum>2</SeqNum>
                 <div> ----- </div>
                 <SeqNum>3</SeqNum>
                 <div> ----- </div>
-                <SeqNum style={{color:"white", backgroundColor:"#8A2BE2"}}>4</SeqNum>
-            </Seq>
+                <SeqNum style={{ color: "white", backgroundColor: "#8A2BE2" }}>
+                  4
+                </SeqNum>
+              </Seq>
 
-            <Input type="text" placeholder="Name of Next of Kin" {...register("next_of_kin")} />
+              <Input
+                type="text"
+                placeholder="Name of Next of Kin"
+                {...register("next_of_kin")}
+              />
 
-            <Input type="text" placeholder="Phone Num of Next of Kin" {...register("phoneNo_of_next_of_kin")} />
+              <Input
+                type="text"
+                placeholder="Phone Num of Next of Kin"
+                {...register("phoneNo_of_next_of_kin")}
+              />
 
-            <Button type="submit">Complete Registration</Button>
-            
-          </Form>
-        </Left>
-
-      </Hold>
-    </Body>
-
+              <Button type="submit">Complete Registration</Button>
+            </Form>
+          </Left>
+        </Hold>
+      </Body>
     </div>
-  )
+  );
 };
 
 export default UserSignUp3;
@@ -109,16 +110,16 @@ const SeqNum = styled.h6`
 `;
 
 const Seq = styled.div`
-width: 100%;
-height: 30px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 20px;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 
-div{
-color: #8A2BE2;
-}
+  div {
+    color: #8a2be2;
+  }
 `;
 
 const RightImg = styled.img`
@@ -137,7 +138,7 @@ const Right = styled.div`
 const Button = styled.button`
   width: 105%;
   height: 45px;
-  background: #8A2BE2;
+  background: #8a2be2;
   color: white;
   border: none;
   border-radius: 7px;
@@ -145,8 +146,8 @@ const Button = styled.button`
   transition: all 350ms;
   :hover {
     background-color: transparent;
-    border: 1px solid #8A2BE2;
-    color: #8A2BE2;
+    border: 1px solid #8a2be2;
+    color: #8a2be2;
   }
 `;
 
@@ -155,7 +156,7 @@ const Input = styled.input`
   width: 100%;
   height: 40px;
   border: none;
-  box-shadow: 0 0 2px #8A2BE2;
+  box-shadow: 0 0 2px #8a2be2;
   margin-bottom: 20px;
   border-radius: 7px;
   padding-left: 10px;
@@ -176,10 +177,10 @@ const Input = styled.input`
 const Form = styled.form`
   width: 270px;
   height: 300px;
-  box-shadow: 0 0 3px #8A2BE2;
+  box-shadow: 0 0 3px #8a2be2;
   border-radius: 10px 0 10px 0;
   padding: 30px 30px;
-//   padding-right: 40px;
+  //   padding-right: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -210,7 +211,7 @@ const Left = styled.div`
   width: 40%;
   height: 100%;
   display: flex;
-  flex-direction : column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
