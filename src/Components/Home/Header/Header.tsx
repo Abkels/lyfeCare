@@ -4,6 +4,8 @@ import { RiHomeSmileFill } from "react-icons/ri";
 import { IoMdPricetags, IoMdContact } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { BsFillArrowDownCircleFill } from "react-icons/bs";
+import { Link } from "react-scroll";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -110,11 +112,60 @@ const Header = () => {
             </DropDown>
           ) : null}
         </Wrapper>
+        {scroll ? null : (
+          <Link offset={-100} smooth={true} duration={500} to="footer">
+            <ScroolToButton>
+              <BsFillArrowDownCircleFill />
+            </ScroolToButton>
+          </Link>
+        )}
       </Container>
     </>
   );
 };
 export default Header;
+
+const ScroolToButton = styled.div`
+  /* padding: 16px 17px; */
+
+  border-radius: 50%;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
+  background-color: #8a2be2;
+  @-webkit-keyframes mover {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes mover {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  right: 1%;
+  font-size: 30px;
+  box-shadow: #8a2be2 0px 8px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: fixed;
+  bottom: 2%;
+  @media screen and (max-width: 768px) {
+    right: 3%;
+  }
+`;
 
 const SideNavs = styled(NavLink)`
   text-decoration: none;
@@ -171,7 +222,6 @@ const DropDown = styled.div`
   width: 250px;
   background: #8a2be2;
   backdrop-filter: blur(10px);
-  display: flex;
   justify-content: center;
   /* align-items: center; */
   font-family: poppins;
@@ -180,7 +230,12 @@ const DropDown = styled.div`
   position: absolute;
   top: 70px;
   right: 20px;
+  display: none;
   border-radius: 7px;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
 `;
 
 const Holder = styled.div`
@@ -266,8 +321,8 @@ const Navs = styled(NavLink)<{ cl: string }>`
 const BurgerMenu = styled.div`
   display: none;
   @media (max-width: 768px) {
-    display: block;
     height: 30px;
+    cursor: pointer;
     width: 30px;
     display: flex;
     justify-content: center;

@@ -2,10 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import { AiOutlinePhone } from "react-icons/ai";
 import { AiOutlineMail } from "react-icons/ai";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
+import { Link } from "react-scroll";
 
 const Footer = () => {
+  const [scroll, setScroll] = React.useState<Boolean>(false);
+
+  const changeBg = () => {
+    if (window.scrollY >= 70) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeBg);
+
   return (
-    <Container>
+    <Container id="footer">
       <Wrapper>
         <AbtBag>
           <Logo>LYFECARE.</Logo>
@@ -49,11 +63,61 @@ const Footer = () => {
         </OtherNav>
       </Wrapper>
       <small style={{ fontFamily: "poppins" }}>Powered by CODELAB.</small>
+
+      {scroll ? (
+        <Link offset={-100} smooth={true} duration={500} to="hero">
+          <ScroolToTop>
+            <BsFillArrowUpCircleFill />
+          </ScroolToTop>
+        </Link>
+      ) : null}
     </Container>
   );
 };
 
 export default Footer;
+
+const ScroolToTop = styled.div`
+  /* padding: 16px 17px; */
+
+  border-radius: 50%;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
+  background-color: #8a2be2;
+  @-webkit-keyframes mover {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes mover {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  right: 1%;
+  font-size: 30px;
+  box-shadow: #8a2be2 0px 8px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: fixed;
+  bottom: 2%;
+  @media screen and (max-width: 768px) {
+    right: 3%;
+  }
+`;
 
 const Icn = styled.div`
   display: flex;
