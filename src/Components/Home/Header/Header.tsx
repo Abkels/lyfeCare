@@ -42,10 +42,12 @@ const Header = () => {
               <span>Home</span>
             </Navs>
 
-            <Navs to="/footer" cl={scroll ? "#8A2BE2" : "white"}>
-              <IoMdContact />
-              <span>Contact us</span>
-            </Navs>
+            <Link offset={-100} smooth={true} duration={700} to="footer">
+              <Contact cl={scroll ? "#8A2BE2" : "white"}>
+                <IoMdContact />
+                <span>Contact us</span>
+              </Contact>
+            </Link>
 
             <Navs to="/donateblood" cl={scroll ? "#8A2BE2" : "white"}>
               <IoMdPricetags />
@@ -74,10 +76,12 @@ const Header = () => {
                   <RiHomeSmileFill /> Home
                 </SideNavs>
                 {/* <SideNavs to="/about">About</SideNavs> */}
-                <SideNavs to="footer">
-                  {" "}
-                  <IoMdContact /> Contact us
-                </SideNavs>
+                <Link offset={-100} smooth={true} duration={700} to="footer">
+                  <ContactMedia>
+                    {" "}
+                    <IoMdContact /> Contact us
+                  </ContactMedia>
+                </Link>
                 <SideNavs to="/donateblood">
                   {" "}
                   <IoMdPricetags /> Donate Blood
@@ -124,6 +128,75 @@ const Header = () => {
   );
 };
 export default Header;
+
+const ContactMedia = styled.div`
+  text-decoration: none;
+  width: 100%;
+  margin-top: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  font-family: poppins;
+  margin-bottom: 15px;
+
+  :hover {
+    cursor: pointer;
+    transition: all 350ms;
+    transform: scale(0.9);
+  }
+
+  button {
+    height: 30px;
+    width: 150px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    background-color: #087cc5;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 600;
+    transition: all 350ms;
+    cursor: pointer;
+    :hover {
+      transform: scale(0.94);
+    }
+  }
+  :hover {
+    color: #ffb400;
+  }
+
+  &.active {
+    color: #087cc5;
+  }
+
+  span {
+    margin-left: 5px;
+  }
+`;
+
+const Contact = styled.div<{ cl: string }>`
+  color: ${(props) => props.cl};
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  /* #F3F7F5
+  #F3F7F5 */
+  span {
+    margin-left: 3px;
+    font-weight: 600;
+  }
+`;
 
 const ScroolToButton = styled.div`
   /* padding: 16px 17px; */
