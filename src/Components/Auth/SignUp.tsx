@@ -18,7 +18,6 @@ import Swal from "sweetalert2";
 const SignUp = () => {
   const dispatch = UseAppDispach();
   const navigate = useNavigate();
-  
 
   const schema = yup
     .object({
@@ -51,8 +50,7 @@ const SignUp = () => {
   });
 
   const Submit = handleSubmit(async (data) => {
-    posting
-      .mutate(data)
+    posting.mutate(data);
 
     reset();
 
@@ -63,12 +61,11 @@ const SignUp = () => {
       icon: "success",
     }).catch((err) => {
       Swal.fire({
-        title: "an error occured",
+        title: "User Already Exist",
         icon: "error",
-        text: `${err.response?.data?.message}`,
+        // text: `${err.response?.data?.message}`,
       });
     });
-    
   });
 
   //

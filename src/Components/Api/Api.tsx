@@ -89,6 +89,9 @@ export const signin = async ({ email, password }: any) => {
     )
     .then((res) => {
       return res.data;
+    })
+    .catch((err) => {
+      return err;
     });
 };
 

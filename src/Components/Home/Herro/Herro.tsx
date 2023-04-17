@@ -6,7 +6,7 @@ import Typewriter from "typewriter-effect";
 const Heroo = () => {
   return (
     <>
-      <Herro>
+      <Herro id="hero">
         <Black></Black>
 
         <Content>
