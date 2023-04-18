@@ -35,7 +35,6 @@ const Signin = () => {
 
     onSuccess: (myData: any) => {
       dispatch(User(myData.data));
-      console.log("here", myData.data);
     },
   });
 
