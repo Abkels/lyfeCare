@@ -27,6 +27,7 @@ const DashHeader = () => {
   };
 
   const user = useAppSelector((state) => state?.currentUser);
+  console.log("here", user?.fullName);
 
   const { data } = useQuery({
     queryKey: ["post"],
@@ -174,7 +175,7 @@ const DashHeader = () => {
             <AiOutlineMail />
           </Icon>
 
-          <UserLetter>{user?.fullName.charAt(0).toUpperCase()}</UserLetter>
+          <UserLetter>{user?.email.charAt(0).toUpperCase()}</UserLetter>
 
           <Username>{data?.data?.userName}</Username>
 

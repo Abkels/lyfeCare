@@ -1,11 +1,12 @@
-import React, { lazy, useState } from "react";
-import { useRoutes } from "react-router-dom";
+import React, { lazy, useEffect } from "react";
+import { useNavigate, useRoutes } from "react-router-dom";
 import ChooseSignUp from "../Auth/ChooseSignUp";
 import ConsultantSignUp from "../Auth/ConsultantSignUp";
 import HospitalSignUp from "../Auth/HospitalSignUp";
 import ComingSoon from "../BloodDonation/ComingSoon";
 // import LandingPage from "../Home/LandingPage";
 import ConsultantSignUp2 from "../Auth/ConsultantSignup2";
+import { useAppSelector } from "../Global/Store";
 
 const LandingPage = lazy(() => import("../Home/LandingPage"));
 const SignUp = lazy(() => import("../Auth/SignUp"));
@@ -15,6 +16,15 @@ const Signin = lazy(() => import("../Auth/Signin"));
 const InputOTP = lazy(() => import("../Auth/InputOTP"));
 
 const HomeRoutes = () => {
+  const navigate = useNavigate();
+  const getuser = useAppSelector((state) => state.currentUser);
+
+  useEffect(() => {
+    if (getuser?.fullName) {
+      navigate("/dashboardhome", { replace: true });
+    }
+  }, []);
+
   const element = useRoutes([
     {
       path: "/",
@@ -59,10 +69,6 @@ const HomeRoutes = () => {
     {
       path: "signhospital",
       element: <HospitalSignUp />,
-    },
-    {
-      path: "*",
-      element: <h1>Page Not Found</h1>,
     },
   ]);
   return element;

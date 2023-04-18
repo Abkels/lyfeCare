@@ -5,6 +5,7 @@ import { useAppSelector } from "./Components/Global/Store";
 import ConsultRoutes from "./Components/Routes/ConsultDashRoutes";
 import DashBoardRoute from "./Components/Routes/DashBoardRoute";
 import HomeRoutes from "./Components/Routes/HomeRoutes";
+import PrivateRoute from "./Components/Routes/private/PrivateRoute";
 
 function App() {
   const getUser = useAppSelector((state) => state?.currentUser);
@@ -13,7 +14,10 @@ function App() {
 
   return (
     <>
-      <div>{typeof getUser?.email === "string" ? <DashBoardRoute /> : <HomeRoutes />}</div>
+      <HomeRoutes />
+      <PrivateRoute>
+        <DashBoardRoute />
+      </PrivateRoute>
 
       <div>
         {typeof consultant?.name === "string" ? <ConsultRoutes /> : null}
