@@ -10,7 +10,6 @@ const IsLoading = () => {
           color="#8A2BE2"
           width="100"
           visible={true}
-          ariaLabel="falling-lines-loading"
         />
         <p>Loading...</p>
       </Main>
