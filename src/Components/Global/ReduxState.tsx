@@ -18,11 +18,11 @@ const ReduxState = createSlice({
       state.currentUser = payload;
     },
 
-    Consultant: (state, {payload}: PayloadAction<consultData>) => {
+    Consultant: (state, { payload }: PayloadAction<consultData>) => {
       state.consultUser = null;
     },
 
-    Hospital: (state, {payload}: PayloadAction<hospitalData>) => {
+    Hospital: (state, { payload }: PayloadAction<hospitalData>) => {
       state.hospitalUser = payload;
     },
 

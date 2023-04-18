@@ -11,6 +11,7 @@ import { MdHealthAndSafety } from "react-icons/md";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UseAppDispach } from "../Global/Store";
 import { logout } from "../Global/ReduxState";
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
   const dispatch = UseAppDispach();
@@ -31,7 +32,8 @@ const SideBar = () => {
                   textDecoration: isActive ? "none" : "none",
                   color: isActive ? "yellow" : "white",
                 };
-              }}>
+              }}
+            >
               <Home>
                 <Icon>
                   <FaHome />
@@ -48,7 +50,8 @@ const SideBar = () => {
                   textDecoration: isActive ? "none" : "none",
                   color: isActive ? "yellow" : "white",
                 };
-              }}>
+              }}
+            >
               <Home>
                 <Icon>
                   <MdPointOfSale />
@@ -65,7 +68,8 @@ const SideBar = () => {
                   textDecoration: isActive ? "none" : "none",
                   color: isActive ? "yellow" : "white",
                 };
-              }}>
+              }}
+            >
               <Home>
                 <Icon>
                   <GoPerson />
@@ -82,13 +86,25 @@ const SideBar = () => {
                   textDecoration: isActive ? "none" : "none",
                   color: isActive ? "yellow" : "white",
                 };
-              }}>
+              }}
+            >
               <Home>
                 <Icon>
                   <MdHealthAndSafety />
                 </Icon>
 
-                <HomeText>HMO <br /> <span style={{color:"#a8ff37", fontWeight:"700", fontSize:"10px"}}>coming soon!</span></HomeText>
+                <HomeText>
+                  HMO <br />{" "}
+                  <span
+                    style={{
+                      color: "#a8ff37",
+                      fontWeight: "700",
+                      fontSize: "10px",
+                    }}
+                  >
+                    coming soon!
+                  </span>
+                </HomeText>
               </Home>
             </NavLink>
 
@@ -99,7 +115,8 @@ const SideBar = () => {
                   textDecoration: isActive ? "none" : "none",
                   color: isActive ? "yellow" : "white",
                 };
-              }}>
+              }}
+            >
               <Home>
                 <Icon>
                   <AiOutlineFund />
@@ -109,8 +126,6 @@ const SideBar = () => {
               </Home>
             </NavLink>
 
-            
-
             <NavLink
               to="/dashboardhome"
               style={({ isActive }) => {
@@ -118,13 +133,25 @@ const SideBar = () => {
                   textDecoration: isActive ? "none" : "none",
                   color: isActive ? "yellow" : "white",
                 };
-              }}>
+              }}
+            >
               <Home>
                 <Icon>
                   <FaAmbulance />
                 </Icon>
 
-                <HomeText>Ambulance Services <br /> <span style={{color:"yellow", fontWeight:"700", fontSize:"10px"}}>Coming Soon!</span></HomeText>
+                <HomeText>
+                  Ambulance Services <br />{" "}
+                  <span
+                    style={{
+                      color: "yellow",
+                      fontWeight: "700",
+                      fontSize: "10px",
+                    }}
+                  >
+                    Coming Soon!
+                  </span>
+                </HomeText>
               </Home>
             </NavLink>
 
@@ -135,7 +162,8 @@ const SideBar = () => {
                   textDecoration: isActive ? "none" : "none",
                   color: isActive ? "yellow" : "white",
                 };
-              }}>
+              }}
+            >
               <Home>
                 <Icon>
                   <AiFillMessage />
@@ -152,13 +180,15 @@ const SideBar = () => {
                 <AiOutlineLogout />
               </Icon>
 
-              <HomeText
-                onClick={() => {
-                  dispatch(logout());
-                  navigate("/");
-                }}>
-                Logout
-              </HomeText>
+              <Link style={{ textDecoration: "none", color: "white" }} to={"/"}>
+                <HomeText
+                  onClick={() => {
+                    dispatch(logout());
+                  }}
+                >
+                  Logout
+                </HomeText>
+              </Link>
             </Home>
           </Bottom>
         </Contain>
@@ -225,5 +255,5 @@ const Body = styled.div`
   align-items: center;
   position: fixed;
   // background-color: #1f1f1f;
-  background-color: #8A2BE2;
+  background-color: #8a2be2;
 `;
