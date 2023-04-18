@@ -13,13 +13,7 @@ function App() {
 
   return (
     <>
-      <div>
-        {typeof getUser?.fullName === "string" ? (
-          <DashBoardRoute />
-        ) : (
-          <HomeRoutes />
-        )}
-      </div>
+      <div>{typeof getUser?.email === "string" ? <DashBoardRoute /> : <HomeRoutes />}</div>
 
       <div>
         {typeof consultant?.name === "string" ? <ConsultRoutes /> : null}

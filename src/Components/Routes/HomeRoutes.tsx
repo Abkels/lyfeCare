@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { lazy, useState } from "react";
 import { useRoutes } from "react-router-dom";
 import ChooseSignUp from "../Auth/ChooseSignUp";
 import ConsultantSignUp from "../Auth/ConsultantSignUp";
 import HospitalSignUp from "../Auth/HospitalSignUp";
-import Signin from "../Auth/Signin";
-import SignUp from "../Auth/SignUp";
 import ComingSoon from "../BloodDonation/ComingSoon";
-import LandingPage from "../Home/LandingPage";
-import UserSignUp2 from "../Auth/userSignUp2";
-import InputOTP from "../Auth/InputOTP";
-import UserSignUp3 from "../Auth/UserSignUp3";
+// import LandingPage from "../Home/LandingPage";
 import ConsultantSignUp2 from "../Auth/ConsultantSignup2";
+
+const LandingPage = lazy(() => import("../Home/LandingPage"));
+const SignUp = lazy(() => import("../Auth/SignUp"));
+const UserSignUp2 = lazy(() => import("../Auth/userSignUp2"));
+const UserSignUp3 = lazy(() => import("../Auth/UserSignUp3"));
+const Signin = lazy(() => import("../Auth/Signin"));
+const InputOTP = lazy(() => import("../Auth/InputOTP"));
 
 const HomeRoutes = () => {
   const element = useRoutes([

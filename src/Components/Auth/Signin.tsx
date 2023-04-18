@@ -52,7 +52,6 @@ const Signin = () => {
     posting.mutate(data);
 
     // reset();
-    // navigate("/dashboardhome");
 
     Swal.fire({
       title: "Signed in successfully",
@@ -65,9 +64,6 @@ const Signin = () => {
       },
     });
   });
-
-  const user = useAppSelector((state) => state?.currentUser);
-  // console.log("herr", user?.fullName);
 
   return (
     <>
