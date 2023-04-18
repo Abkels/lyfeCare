@@ -46,6 +46,7 @@ const UserSignUp3 = () => {
 
           willClose: () => {
             navigate("/dashboardhome");
+            window.location.reload();
           },
         });
       });

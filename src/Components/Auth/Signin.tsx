@@ -59,7 +59,8 @@ const Signin = () => {
       timerProgressBar: true,
 
       willClose: () => {
-        navigate("/dashboardhome");
+        // navigate("/dashboardhome");
+        window.location.reload();
       },
     });
   });
