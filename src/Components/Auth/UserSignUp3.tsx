@@ -65,11 +65,11 @@ const UserSignUp3 = () => {
             <Form onSubmit={onSubmit}>
               <Seq>
                 <SeqNum>1</SeqNum>
-                <div> ----- </div>
+                <div> --- </div>
                 <SeqNum>2</SeqNum>
-                <div> ----- </div>
+                <div> --- </div>
                 <SeqNum>3</SeqNum>
-                <div> ----- </div>
+                <div> --- </div>
                 <SeqNum style={{ color: "white", backgroundColor: "#8A2BE2" }}>
                   4
                 </SeqNum>
@@ -167,8 +167,9 @@ const Input = styled.input`
 
   @media screen and (max-width: 425px) {
     box-shadow: none;
-    border-bottom: 1px solid #567e22;
+    border-bottom: 1px solid #8a2be2;
   }
+
   @media screen and (max-width: 768px) {
     height: 35px;
   }

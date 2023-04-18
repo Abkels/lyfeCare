@@ -32,7 +32,6 @@ const DashHeader = () => {
     queryKey: ["post"],
     queryFn: () => GetOneUser(user?._id),
   });
-  // console.log(data);
 
   return (
     <div>

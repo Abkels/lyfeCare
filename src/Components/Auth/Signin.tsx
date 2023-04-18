@@ -35,7 +35,6 @@ const Signin = () => {
 
     onSuccess: (myData: any) => {
       dispatch(User(myData.data));
-      console.log("here", myData.data);
     },
   });
 
@@ -164,8 +163,9 @@ const Input = styled.input`
 
   @media screen and (max-width: 425px) {
     box-shadow: none;
-    border-bottom: 1px solid #6c63ff;
+    border-bottom: 1px solid #8a2be2;
   }
+
   @media screen and (max-width: 768px) {
     height: 35px;
   }

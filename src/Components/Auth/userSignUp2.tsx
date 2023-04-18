@@ -73,13 +73,13 @@ const UserSignUp2 = () => {
             <Form onSubmit={onSubmit}>
               <Seq>
                 <SeqNum>1</SeqNum>
-                <div> ----- </div>
+                <div> --- </div>
                 <SeqNum>2</SeqNum>
-                <div> ----- </div>
+                <div> --- </div>
                 <SeqNum style={{ color: "white", backgroundColor: "#8A2BE2" }}>
                   3
                 </SeqNum>
-                <div> ----- </div>
+                <div> --- </div>
                 <SeqNum>4</SeqNum>
               </Seq>
 
@@ -101,6 +101,8 @@ const UserSignUp2 = () => {
                 <Input
                   style={{
                     width: "26%",
+                    height: "90%",
+                    border: "none",
                     boxShadow: "none",
                     margin: "0",
                     outline: "0",
@@ -114,6 +116,8 @@ const UserSignUp2 = () => {
                 <Input
                   style={{
                     width: "26%",
+                    height: "90%",
+                    border: "none",
                     boxShadow: "none",
                     margin: "0",
                     outline: "0",
@@ -127,6 +131,8 @@ const UserSignUp2 = () => {
                 <Input
                   style={{
                     width: "26%",
+                    height: "90%",
+                    border: "none",
                     boxShadow: "none",
                     margin: "0",
                     outline: "0",
@@ -171,6 +177,12 @@ const Birth = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+
+  @media screen and (max-width: 425px) {
+    box-shadow: none;
+    border-bottom: 1px solid #8a2be2;
+  }
 
   h5 {
     color: #892be271;
@@ -246,8 +258,9 @@ const Input = styled.input`
 
   @media screen and (max-width: 425px) {
     box-shadow: none;
-    border-bottom: 1px solid #567e22;
+    border-bottom: 1px solid #8a2be2;
   }
+
   @media screen and (max-width: 768px) {
     height: 35px;
   }
@@ -255,7 +268,7 @@ const Input = styled.input`
 
 const Form = styled.form`
   width: 270px;
-  height: 320px;
+  height: 390px;
   box-shadow: 0 0 3px #8a2be2;
   border-radius: 10px 0 10px 0;
   padding: 30px;
@@ -275,7 +288,7 @@ const Form = styled.form`
   }
 
   @media screen and (max-width: 375px) {
-    width: 285px;
+    width: 290px;
     // padding-right: 20px;
     display: flex;
     flex-direction: column;

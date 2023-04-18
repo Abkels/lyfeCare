@@ -12,7 +12,7 @@ const InputOTP = () => {
   const [otp, setOtp] = useState("");
 
   const getUser = useAppSelector((state) => state?.currentUser);
-  
+
   const navigate = useNavigate();
 
   const verifyOtp = async () => {
@@ -51,13 +51,13 @@ const InputOTP = () => {
             <Form>
               <Seq>
                 <SeqNum>1</SeqNum>
-                <div> ----- </div>
+                <div> --- </div>
                 <SeqNum style={{ color: "white", backgroundColor: "#8A2BE2" }}>
                   2
                 </SeqNum>
-                <div> ----- </div>
+                <div> --- </div>
                 <SeqNum>3</SeqNum>
-                <div> ----- </div>
+                <div> --- </div>
                 <SeqNum>4</SeqNum>
               </Seq>
 
