@@ -143,7 +143,7 @@ const DashHomeTrans = () => {
           ))}
 
 
-          <NavLink style={{ textDecoration: "none", color: "" }} to="/">
+          <NavLink style={{ textDecoration: "none", color: "" }} to="/transactions">
             <See>See All Transactions</See>
           </NavLink>
 
