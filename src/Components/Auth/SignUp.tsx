@@ -59,6 +59,10 @@ const SignUp = () => {
     Swal.fire({
       title: "Account Created. Pls, check your mail for OTP verification",
       icon: "success",
+      willClose: () => {
+        // navigate("/dashboardhome");
+        window.location.reload();
+      },
     }).catch((err) => {
       Swal.fire({
         title: "User Already Exist",
