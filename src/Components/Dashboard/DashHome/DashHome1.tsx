@@ -186,6 +186,7 @@ const Icn = styled.div`
 
 const DownImg = styled.img`
   width: 70%;
+  margin-top: 5px;
 `;
 
 const Down = styled.div`
@@ -342,7 +343,7 @@ const Right = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 600px) {
     width: 90%;
   }
 `;
@@ -404,7 +405,7 @@ const Left = styled.div`
   justify-content: space-between;
   // align-items: center;
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 600px) {
     width: 85%;
     margin-bottom: 15px;
   }
@@ -417,7 +418,7 @@ const Contain = styled.div`
   align-items: center;
   flex-wrap: wrap;
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 600px) {
     justify-content: center;
   }
 `;

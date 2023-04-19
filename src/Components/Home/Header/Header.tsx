@@ -75,17 +75,20 @@ const Header = () => {
                   {" "}
                   <RiHomeSmileFill /> Home
                 </SideNavs>
+
                 {/* <SideNavs to="/about">About</SideNavs> */}
+
                 <Link offset={-100} smooth={true} duration={700} to="footer">
                   <ContactMedia>
                     {" "}
                     <IoMdContact /> Contact us
                   </ContactMedia>
                 </Link>
-                <SideNavs to="/donateblood">
+
+                {/* <SideNavs to="/donateblood">
                   {" "}
                   <IoMdPricetags /> Donate Blood
-                </SideNavs>
+                </SideNavs> */}
 
                 <SideNavs
                   style={{
@@ -364,7 +367,11 @@ const Logo = styled.img`
   width: 150px;
 
   @media (max-width: 510px) {
-    width: 45px;
+    width: 130px;
+  }
+
+  @media (max-width: 375px) {
+    width: 100px;
   }
 `;
 
@@ -394,9 +401,10 @@ const Navs = styled(NavLink)<{ cl: string }>`
 const BurgerMenu = styled.div`
   display: none;
   @media (max-width: 768px) {
-    height: 30px;
+    font-size: 30px;
+    height: 45px;
     cursor: pointer;
-    width: 30px;
+    width: 45px;
     display: flex;
     justify-content: center;
     align-items: center;

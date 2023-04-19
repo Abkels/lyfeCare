@@ -170,7 +170,7 @@ const DashHeader = () => {
         <Logo src="/images/LyfeCareLogo.png" />
 
         <User>
-          <Icon style={{ color: "#000000", fontSize: "21px" }}>
+          <Icon style={{ color: "#8a2be2", fontSize: "21px" }}>
             <AiOutlineMail />
           </Icon>
 
@@ -178,7 +178,7 @@ const DashHeader = () => {
 
           <Username>{data?.data?.fullName}</Username>
 
-          <Iconn style={{ color: "#000000" }} onClick={menu}>
+          <Iconn style={{ color: "#8a2be2" }} onClick={menu}>
             <FiMenu />
           </Iconn>
         </User>
@@ -215,6 +215,7 @@ const Iconn = styled.div`
     margin-right: 15px;
     font-weight: 700;
     margin-top: 10px;
+    font-size: 30px;
   }
 `;
 
@@ -296,8 +297,8 @@ const UserLetter = styled.div`
   height: 25px;
   border-radius: 50%;
   font-weight: 600;
-  // color: white;
-  border: 2px solid #000000;
+  color: #8a2be2;
+  border: 2px solid #8a2be2;
   margin-right: 15px;
   margin-left: 8px;
   text-align: center;
@@ -317,6 +318,7 @@ const User = styled.div`
   display: flex;
   align-items: center;
   margin-right: 25px;
+  margin-bottom: 13px;
 
   @media screen and (max-width: 375px) {
     margin-right: 10px;
@@ -327,7 +329,11 @@ const Logo = styled.img`
   width: 220px;
 
   @media (max-width: 510px) {
-    width: 45px;
+    width: 180px;
+  }
+
+  @media (max-width: 375px) {
+    width: 140px;
   }
 `;
 
