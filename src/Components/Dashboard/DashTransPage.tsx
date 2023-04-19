@@ -229,6 +229,7 @@ const DashTransPage = () => {
                 Withdraw
               </Pay>
             </Button>
+
           </Fundd>
 
           {showWithdraw ? (
@@ -348,10 +349,7 @@ const DashTransPage = () => {
               <Amount>
                 <Trans>
                   <TbCurrencyNaira />
-                  {/* {
-                                data?.data?.history[0].
-                                }  */}
-                  20,000
+                      {el.amount} 
                 </Trans>
                 <Trans>{el.transactionRefrence}</Trans>
               </Amount>
@@ -360,26 +358,19 @@ const DashTransPage = () => {
                 <Trans style={{ color: "rgba(123, 126, 126, 0.992)" }}>
                   {el.transactionType}
                 </Trans>
+
                 <Trans style={{ color: "rgba(123, 126, 126, 0.992)" }}>
                   {el.date}
                 </Trans>
+
+                <Trans style={{ color: "rgba(123, 126, 126, 0.992)" }}>
+                  {el.time}
+                </Trans>
+
               </Amount>
             </MobTop>
           ))}
 
-          {/* <MobTop 
-                    // style={{backgroundColor:"#a8ff37"}}
-                    >
-                        <Amount>
-                            <Trans>N10,000</Trans>
-                            <Trans>shdg212jc89u8</Trans>
-                        </Amount>
-
-                        <Amount>
-                            <Trans style={{color:"rgba(123, 126, 126, 0.992)"}}>01:13pm</Trans>
-                            <Trans style={{color:"rgba(123, 126, 126, 0.992)"}}>Mar. 02, 2023</Trans>
-                        </Amount>
-                    </MobTop> */}
         </Contain>
       </Body>
     </div>
@@ -421,6 +412,10 @@ const Pay2 = styled.input`
 const Trans = styled.h5`
   font-size: 13px;
   font-weight: 700;
+
+  @media screen and (max-width: 320px) {
+    font-size: 10px;
+  }
 `;
 
 const Amount = styled.div`
@@ -429,7 +424,6 @@ const Amount = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 20px;
 `;
 
 const MobTop = styled.div`
@@ -438,12 +432,20 @@ const MobTop = styled.div`
   @media screen and (max-width: 425px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    // flex-direction: column;
     border: none;
     border-radius: 12px;
-    // border-bottom: 2px solid #a8ff37;
-    border-bottom: 1px solid #000000;
+    border-bottom: 2px solid rgba(123, 126, 126, 0.992);
+    // border-bottom: 1px solid #F4511E;
     // border-top: 1px solid #000000;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    // width: 85%;
+    height: 40px;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 7px;
   }
 `;
 
@@ -536,6 +538,7 @@ const Pay = styled.button`
   border-radius: 5px;
   cursor: pointer;
   border: none;
+  margin-bottom: 8px;
 
   @media screen and (max-width: 375px) {
     font-size: 12px;
@@ -545,6 +548,12 @@ const Pay = styled.button`
 const Button = styled.div`
   gap: rem;
   margin-top: 10px;
+
+/* @media screen and (max-width: 420px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 `;
 
 const Fundd = styled.div`
@@ -615,7 +624,7 @@ const Contain = styled.div`
   padding-bottom: 30px;
 
   @media screen and (max-width: 425px) {
-    width: 85%;
+    width: 95%;
   }
 `;
 

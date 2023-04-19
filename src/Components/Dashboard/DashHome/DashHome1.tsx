@@ -344,7 +344,7 @@ const Right = styled.div`
   flex-direction: column;
 
   @media screen and (max-width: 600px) {
-    width: 90%;
+    width: 96%;
   }
 `;
 
@@ -406,7 +406,7 @@ const Left = styled.div`
   // align-items: center;
 
   @media screen and (max-width: 600px) {
-    width: 85%;
+    width: 95%;
     margin-bottom: 15px;
   }
 `;

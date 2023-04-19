@@ -317,7 +317,7 @@ const UserLetter = styled.div`
 const User = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 25px;
+  margin-right: 20px;
   margin-bottom: 13px;
 
   @media screen and (max-width: 375px) {
@@ -347,4 +347,5 @@ const Head = styled.div`
   justify-content: space-between;
   position: fixed;
   z-index: 400;
+  box-shadow: 0 0 2px gray;
 `;

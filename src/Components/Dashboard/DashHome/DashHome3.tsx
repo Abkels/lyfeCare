@@ -6,6 +6,8 @@ import { AiOutlineClose } from "react-icons/ai";
 // import { useAppSelector } from "../Global/Store";
 import { useQuery } from "@tanstack/react-query";
 import { bookAppointment } from "../../Api/Api"
+import { NavLink } from "react-router-dom";
+
 
 const DashHomeAppoint = () => {
   const [quick, setQuick] = React.useState(false);
@@ -129,6 +131,11 @@ const DashHomeAppoint = () => {
               <Date style={{ fontSize: "11px" }}>Mar. 12, 2023</Date>
             </Amount>
           </MobTop>
+
+        <NavLink style={{ textDecoration: "none", color: "" }} to="/">
+        <See>See All Appointments</See>
+        </NavLink>
+
         </Contain>
       </Body>
     </div>
@@ -141,13 +148,16 @@ export default DashHomeAppoint;
 
 // const Fund = styled.div``;
 
-// const Fund = styled.div``;
-
-// const Fund = styled.div``;
-
-// const Fund = styled.div``;
-
-// const Fund = styled.div``;
+const See = styled.div`
+font-size: 12px;
+font-weight: 700;
+// font-weight: 650;
+// color: rgba(123, 126, 126, 0.992);
+// color: white;
+cursor: pointer;
+margin-left: 20px;
+margin-top: 20px;
+`;
 
 const Date = styled.div`
   font-size: 14px;

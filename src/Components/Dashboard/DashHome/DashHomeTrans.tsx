@@ -13,7 +13,7 @@ const DashHomeTrans = () => {
     queryKey: ["post"],
     queryFn: () => GetOneUser(getUser?._id),
   });
-  // console.log(data);
+  console.log(data?.data?.history);
 
   return (
     <>
@@ -65,6 +65,7 @@ const DashHomeTrans = () => {
                 <TbCurrencyNaira />
                 {el.amount}
               </Names>
+
               <Names>
                 {
                   // data?.data?.history[0].transactionRefrence
@@ -78,42 +79,74 @@ const DashHomeTrans = () => {
                 }
               </Names>
               <Names>Emergency</Names>
+
               <Names>
                 {
                   // el.time
                   // data?.data?.history[0].time
                 }
               </Names>
+
               <Names>
                 {
                   el.date
                   // data?.data?.history[0].date
                 }
               </Names>
+
             </Top>
           ))}
 
+          {data?.data.history.map((el: any) => (
+            
           <MobTop
-          // style={{backgroundColor:"#a8ff37"}}
           >
             <Amount>
-              <Trans>N10,000</Trans>
-              <Trans>shdg212jc89u8</Trans>
+              <Trans>
+                <TbCurrencyNaira />
+                {el.amount}
+              </Trans>
+
+              <Trans>
+                {
+                  // data?.data?.history[0].transactionRefrence
+                  el.transactionRefrence
+                }
+              </Trans>
             </Amount>
 
             <Amount>
-              <Trans style={{ color: "rgba(123, 126, 126, 0.992)" }}>
-                01:13pm
+              <Trans style={{ color: "rgba(123, 126, 126, 0.992)", paddingBottom:"5px" }}>
+                {
+                  // data?.data?.history[0].transactionType
+                  el.transactionType
+                }
               </Trans>
-              <Trans style={{ color: "rgba(123, 126, 126, 0.992)" }}>
-                Mar. 02, 2023
+
+              <Trans style={{ color: "rgba(123, 126, 126, 0.992)", paddingBottom:"5px" }}>
+                {
+                  el.date
+                  // data?.data?.history[0].date
+                }
               </Trans>
+
+              <Trans style={{ color: "rgba(123, 126, 126, 0.992)", paddingBottom:"5px" }}>
+                {
+                  // data?.data?.history[0].transactionRefrence
+                  el.time
+                }
+              </Trans>
+
             </Amount>
           </MobTop>
+            
+          ))}
+
 
           <NavLink style={{ textDecoration: "none", color: "" }} to="/">
             <See>See All Transactions</See>
           </NavLink>
+
         </Contain>
       </Body>
     </>
@@ -133,6 +166,10 @@ export default DashHomeTrans;
 const Trans = styled.h5`
   font-size: 13px;
   font-weight: 700;
+
+  @media screen and (max-width: 320px) {
+    font-size: 11px; 
+  }
 `;
 
 const Amount = styled.div`
@@ -141,7 +178,7 @@ const Amount = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 `;
 
 const MobTop = styled.div`
@@ -150,11 +187,20 @@ const MobTop = styled.div`
   @media screen and (max-width: 425px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    // flex-direction: column;
     border: none;
     border-radius: 12px;
-    // border-bottom: 2px solid #a8ff37;
-    border-bottom: 1px solid #000000;
+    border-bottom: 2px solid rgba(123, 126, 126, 0.992);
+    // border-bottom: 1px solid #F4511E;
     // border-top: 1px solid #000000;
+    margin-bottom: 10px;
+    // width: 85%;
+    height: 40px;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 7px;
   }
 `;
 
@@ -208,10 +254,6 @@ const Contain = styled.div`
   // justify-content: center;
   margin-top: 20px;
   padding-bottom: 30px;
-
-  @media screen and (max-width: 425px) {
-    width: 85%;
-  }
 `;
 
 const Body = styled.div`
