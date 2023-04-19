@@ -2,24 +2,16 @@ import React, { lazy } from "react";
 import { useRoutes } from "react-router";
 import styled from "styled-components";
 import DashHeader from "../Dashboard/DashHeader";
-// import DashAppointment from "../Dashboard/DashAppoint";
-// import DashFund from "../Dashboard/DashFund2";
-// import DashFundWallet from "../Dashboard/DashFundWallet";
-// import DashHMO from "../Dashboard/Dashhmo";
-// import DashSettings from "../Dashboard/DashSettings";
-// import DashTransPage from "../Dashboard/DashTransPage";
+import DashAppointment from "../Dashboard/DashAppoint";
+import DashFund from "../Dashboard/DashFund2";
+import DashFundWallet from "../Dashboard/DashFundWallet";
+import DashHMO from "../Dashboard/Dashhmo";
+import DashSettings from "../Dashboard/DashSettings";
+import DashTransPage from "../Dashboard/DashTransPage";
 import DashSiderBar from "../Dashboard/DashSiderBar";
 import DashHomeComp from "../Dashboard/DashHome/DashHomeComp";
 
 const DashBoardRoute = () => {
-  // const DashHomeComp = lazy(() => import("../Dashboard/DashHome/DashHomeComp"));
-  const DashTransPage = lazy(() => import("../Dashboard/DashTransPage"));
-  const DashAppointment = lazy(() => import("../Dashboard/DashAppoint"));
-  const DashFundWallet = lazy(() => import("../Dashboard/DashFundWallet"));
-  const DashSettings = lazy(() => import("../Dashboard/DashSettings"));
-  const DashHMO = lazy(() => import("../Dashboard/Dashhmo"));
-  const DashFund = lazy(() => import("../Dashboard/DashFund2"));
-
   const element = useRoutes([
     {
       path: "/dashboardhome",

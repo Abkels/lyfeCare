@@ -2,7 +2,7 @@ import React from "react";
 import { useAppSelector } from "../../Global/Store";
 import { Navigate } from "react-router-dom";
 
-const PrivateRoute = ({ children }: any) => {
+export const PrivateRoute = ({ children }: any) => {
   const getUser = useAppSelector((state) => state?.currentUser);
 
   if (getUser?.email) {
@@ -11,5 +11,3 @@ const PrivateRoute = ({ children }: any) => {
     <Navigate to={"/"} />;
   }
 };
-
-export default PrivateRoute;

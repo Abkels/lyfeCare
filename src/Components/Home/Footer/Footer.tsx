@@ -55,9 +55,24 @@ const Footer = () => {
           </Holder>
           <Holder>
             <Title>Socials</Title>
-            <span>Facebook</span>
-            <span>Twitter</span>
-            <span>Instagram</span>
+            <a
+              style={{ color: "white", textDecoration: "none" }}
+              href="https://web.facebook.com/profile.php?id=100091680217523"
+            >
+              <span>Facebook</span>
+            </a>
+            <a
+              style={{ color: "white", textDecoration: "none" }}
+              href="https://twitter.com/lyfecareNG"
+            >
+              <span>Twitter</span>
+            </a>
+            <a
+              style={{ color: "white", textDecoration: "none" }}
+              href="https://www.instagram.com/lyfecareng/"
+            >
+              <span>Instagram</span>
+            </a>
             <span>Whatsapp</span>
           </Holder>
         </OtherNav>
