@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React from "react";
 import { useRoutes } from "react-router";
 import styled from "styled-components";
 import DashHeader from "../Dashboard/DashHeader";

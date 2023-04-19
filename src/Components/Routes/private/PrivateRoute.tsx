@@ -11,3 +11,4 @@ export const PrivateRoute = ({ children }: any) => {
     <Navigate to={"/"} />;
   }
 };
+

@@ -27,7 +27,6 @@ const DashHeader = () => {
   };
 
   const user = useAppSelector((state) => state?.currentUser);
-  console.log("here", user?.fullName);
 
   const { data } = useQuery({
     queryKey: ["post"],

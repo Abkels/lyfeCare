@@ -18,7 +18,6 @@ function App() {
       <PrivateRoute>
         <DashBoardRoute />
       </PrivateRoute>
-
       {/* <div>
         {typeof consultant?.name === "string" ? <ConsultRoutes /> : null}
       </div> */}
