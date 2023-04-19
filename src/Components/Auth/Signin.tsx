@@ -15,6 +15,7 @@ import { User } from "../Global/ReduxState";
 import { signin } from "../Api/Api";
 import { AnyAction } from "@reduxjs/toolkit";
 import Swal from "sweetalert2";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const Signin = () => {
   const dispatch = UseAppDispach();
@@ -65,6 +66,10 @@ const Signin = () => {
     });
   });
 
+  const [showPassword, setshowPassword] = React.useState(false);
+
+  const fn = () => [setshowPassword(!showPassword)];
+
   return (
     <>
       <Body>
@@ -91,12 +96,28 @@ const Signin = () => {
 
               <Input type="text" placeholder="Email" {...register("email")} />
               <p>{errors?.email && errors?.email?.message}</p>
-
-              <Input
-                type="password"
-                placeholder="Password"
-                {...register("password")}
-              />
+              <Wrap>
+                <Input
+                  style={{
+                    height: "100%",
+                    boxShadow: "none",
+                    width: "100%",
+                    borderBottom: "none",
+                  }}
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  {...register("password")}
+                />
+                {showPassword ? (
+                  <Icon onClick={fn}>
+                    <AiOutlineEye />
+                  </Icon>
+                ) : (
+                  <Icon onClick={fn}>
+                    <AiOutlineEyeInvisible />
+                  </Icon>
+                )}
+              </Wrap>
               <p>{errors?.password && errors?.password?.message}</p>
 
               <Button type="submit">Sign in</Button>
@@ -113,6 +134,37 @@ const Signin = () => {
 };
 
 export default Signin;
+
+const Wrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 2px #8a2be2;
+  height: 45px;
+  border-radius: 7px;
+  width: 280px;
+
+  @media screen and (max-width: 500px) {
+    box-shadow: none;
+    border-bottom: 1px solid #8a2be2;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 280px;
+    height: 35px;
+  }
+`;
+
+const Icon = styled.div`
+  color: #8a2be2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 3px;
+  font-size: 18px;
+  margin-right: 5px;
+`;
 
 const RightImg = styled.img`
   width: 500px;
