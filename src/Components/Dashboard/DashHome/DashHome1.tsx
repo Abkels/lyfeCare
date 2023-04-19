@@ -7,6 +7,7 @@ import {
   AiFillEyeInvisible,
   AiFillEye,
   AiFillStar,
+  AiOutlinePhone
 } from "react-icons/ai";
 import { MdBloodtype, MdOutlineBloodtype } from "react-icons/md";
 import { useAppSelector } from "../../Global/Store";
@@ -117,13 +118,15 @@ const DashHome1 = () => {
 
               <Wall1>
                 <Acct2 style={{ color: "#000000" }}>
-                  Eco Bank
+                  Phone Num
                   <Ico style={{ backgroundColor: "#8A2BE2", color: "white" }}>
-                    <AiOutlineDollar />
+                    <AiOutlinePhone />
                   </Ico>
                 </Acct2>
 
-                <Acct3 style={{ color: "#000000" }}>2023456789</Acct3>
+                <Acct3 style={{ color: "#000000" }}>
+                    {data?.data?.phoneNumber}
+                </Acct3>
               </Wall1>
             </Top>
 
