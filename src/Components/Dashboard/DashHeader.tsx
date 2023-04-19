@@ -176,7 +176,7 @@ const DashHeader = () => {
 
           <UserLetter>{user?.email.charAt(0).toUpperCase()}</UserLetter>
 
-          <Username>{data?.data?.userName}</Username>
+          <Username>{data?.data?.fullName}</Username>
 
           <Iconn style={{ color: "#000000" }} onClick={menu}>
             <FiMenu />

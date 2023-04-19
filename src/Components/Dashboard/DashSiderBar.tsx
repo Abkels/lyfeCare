@@ -127,35 +127,6 @@ const SideBar = () => {
             </NavLink>
 
             <NavLink
-              to="/dashboardhome"
-              style={({ isActive }) => {
-                return {
-                  textDecoration: isActive ? "none" : "none",
-                  color: isActive ? "yellow" : "white",
-                };
-              }}
-            >
-              <Home>
-                <Icon>
-                  <FaAmbulance />
-                </Icon>
-
-                <HomeText>
-                  Ambulance Services <br />{" "}
-                  <span
-                    style={{
-                      color: "yellow",
-                      fontWeight: "700",
-                      fontSize: "10px",
-                    }}
-                  >
-                    Coming Soon!
-                  </span>
-                </HomeText>
-              </Home>
-            </NavLink>
-
-            <NavLink
               to="/settings"
               style={({ isActive }) => {
                 return {

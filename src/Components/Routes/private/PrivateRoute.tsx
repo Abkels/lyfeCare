@@ -12,3 +12,4 @@ export const PrivateRoute = ({ children }: any) => {
   }
 };
 
+// private Route for dashboard

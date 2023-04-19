@@ -130,7 +130,7 @@ const DashHome1 = () => {
             <Top>
               <Wall2>
                 <Blood>
-                  <Blood1>Blood Type</Blood1>
+                  <Blood1>Blood Group</Blood1>
 
                   <Ico style={{ backgroundColor: "#8A2BE2", color: "white" }}>
                     <MdBloodtype />
