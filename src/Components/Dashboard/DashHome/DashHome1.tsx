@@ -23,7 +23,7 @@ const DashHome1 = () => {
     queryKey: ["post"],
     queryFn: () => GetOneUser(getUser?._id),
   });
-  console.log(data);
+  // console.log(data);
 
   const [see, setSee] = useState(false);
   const [walletSee, setWalletSee] = useState(false);

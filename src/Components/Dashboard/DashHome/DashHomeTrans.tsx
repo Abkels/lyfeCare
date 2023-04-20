@@ -13,7 +13,7 @@ const DashHomeTrans = () => {
     queryKey: ["post"],
     queryFn: () => GetOneUser(getUser?._id),
   });
-  console.log(data?.data?.history);
+  // console.log(data?.data?.history);
 
   return (
     <>
@@ -97,6 +97,8 @@ const DashHomeTrans = () => {
             </Top>
           ))}
 
+
+{/* moibile */}
           {data?.data.history.map((el: any) => (
             
           <MobTop

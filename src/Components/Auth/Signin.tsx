@@ -23,8 +23,8 @@ const Signin = () => {
 
   const schema = yup
     .object({
-      email: yup.string().required(),
-      password: yup.string().required(),
+      email: yup.string().required("Please, input your email"),
+      password: yup.string().required("Please, input your password"),
     })
     .required();
 
@@ -36,6 +36,7 @@ const Signin = () => {
 
     onSuccess: (myData: any) => {
       dispatch(User(myData.data));
+      // console.log("this is", myData)
     },
   });
 
@@ -53,17 +54,23 @@ const Signin = () => {
 
     // reset();
 
-    Swal.fire({
-      title: "Signed in successfully",
-      // html: "redirecting to login",
-      timer: 3000,
-      timerProgressBar: true,
+    // Swal.fire({
+    //   title: "Signed in successfully",
+    //   // html: "redirecting to login",
+    //   timer: 3000,
+    //   timerProgressBar: true,
 
-      willClose: () => {
-        // navigate("/dashboardhome");
-        window.location.reload();
-      },
-    });
+    //   willClose: () => {
+    //     // navigate("/dashboardhome");
+    //     window.location.reload();
+    //   },
+    // }).catch((err) => {
+    //   Swal.fire({
+    //     title: "wrong email or password",
+    //     icon: "error",
+    //     text: `${err.response?.data?.message}`,
+    //   });
+    // });
   });
 
   const [showPassword, setshowPassword] = React.useState(false);
@@ -121,6 +128,10 @@ const Signin = () => {
               <p>{errors?.password && errors?.password?.message}</p>
 
               <Button type="submit">Sign in</Button>
+
+              <Link style={{ textDecoration: "none" }} to={""}>
+                <Already>Forgot Password?</Already>
+              </Link>
 
               <Link style={{ textDecoration: "none" }} to={"/signup"}>
                 <Already>Already have an account? Sign up</Already>
@@ -229,7 +240,7 @@ const Input = styled.input`
 
 const Form = styled.form`
   width: 270px;
-  height: 300px;
+  height: 320px;
   box-shadow: 0 0 3px #8a2be2;
   border-radius: 10px 0 10px 0;
   padding: 30px;
@@ -237,7 +248,7 @@ const Form = styled.form`
 
   p {
     font-size: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   @media screen and (max-width: 425px) {

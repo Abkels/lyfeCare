@@ -9,7 +9,7 @@ const IsLoading = () => {
       <Main>
         <Wrap>
           <img src={lyfeCareIcon} />
-          <i>lyfe care</i>
+          <i>LyfeCare</i>
         </Wrap>
         <FallingLines color="#8A2BE2" width="100" visible={true} />
         <p>Loading...</p>
@@ -24,6 +24,7 @@ const Wrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 35px;
 `;
 
 const Main = styled.div`
@@ -41,8 +42,8 @@ const Main = styled.div`
   }
 
   img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     margin-right: 10px;
   }
 

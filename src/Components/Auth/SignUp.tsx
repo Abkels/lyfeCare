@@ -227,13 +227,14 @@ const Input = styled.input`
   padding-left: 10px;
 
   p {
-    font-size: 10px;
-    margin-bottom: 10px;
+    font-size: 9px;
+    margin-bottom: 8px;
   }
 
   @media screen and (max-width: 425px) {
     box-shadow: none;
     border-bottom: 1px solid #8a2be2;
+    outline: none;
   }
   @media screen and (max-width: 768px) {
     height: 35px;
@@ -269,7 +270,7 @@ const Form = styled.form`
     justify-content: center;
   }
   @media screen and (max-width: 768px) {
-    height: 400px;
+    /* height: 400px; */
   }
 `;
 

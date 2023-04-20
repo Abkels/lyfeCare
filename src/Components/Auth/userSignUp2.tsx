@@ -144,17 +144,33 @@ const UserSignUp2 = () => {
                 />
               </Birth>
 
-              <Input
-                type="text"
+              <Input2
                 placeholder="Genotype"
-                {...register("genotype")}
-              />
+                {...register("genotype")}>
+                  <option value="">Genotype</option>
+                  <option value="">AA</option>
+                  <option value="">AS</option>
+                  <option value="">AC</option>
+                  <option value="">SS</option>
+                  <option value="">SC</option>
+                  <option value="">CC</option>
+              </Input2>
+              
 
-              <Input
-                type="text"
+              <Input2
                 placeholder="Blood Group"
-                {...register("bloodGroup")}
-              />
+                {...register("bloodGroup")}>
+                <option value="">Blood Group</option>
+                <option value="">A+</option>
+                <option value="">A-</option>
+                <option value="">B+</option>
+                <option value="">B-</option>
+                <option value="">AB+</option>
+                <option value="">AB-</option>
+                <option value="">O</option>
+                <option value="">O+</option>
+              </Input2>
+              
 
               <Button type="submit">Continue</Button>
             </Form>
@@ -186,6 +202,7 @@ const Birth = styled.div`
 
   h5 {
     color: #892be271;
+    color: #8080807f;
   }
 `;
 
@@ -239,6 +256,30 @@ const Button = styled.button`
     background-color: transparent;
     border: 1px solid #8a2be2;
     color: #8a2be2;
+  }
+`;
+
+const Input2 = styled.select`
+  // <{ props: string }>
+  width: 105%;
+  height: 43px;
+  border: none;
+  box-shadow: 0 0 2px #8a2be2;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  padding-left: 10px;
+
+  p {
+    font-size: 10px;
+  }
+
+  @media screen and (max-width: 425px) {
+    box-shadow: none;
+    border-bottom: 1px solid #8a2be2;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 35px;
   }
 `;
 

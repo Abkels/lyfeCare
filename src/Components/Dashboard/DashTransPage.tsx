@@ -69,6 +69,7 @@ const DashTransPage = () => {
           icon: "success",
         });
         // console.log(res.data)
+        reset();
       })
       .catch((err) => {
         Swal.fire({
@@ -77,7 +78,6 @@ const DashTransPage = () => {
           text: `${err.response?.data?.message}`,
         });
       });
-    reset();
   });
 
   const sendToFriend = handleSubmit(async (data) => {
@@ -89,6 +89,7 @@ const DashTransPage = () => {
           icon: "success",
         });
         // console.log(res.data)
+        reset();
       })
       .catch((err) => {
         Swal.fire({
@@ -97,7 +98,6 @@ const DashTransPage = () => {
           text: `${err.response?.data?.message}`,
         });
       });
-    reset();
   });
 
   interface iData {
@@ -119,13 +119,18 @@ const DashTransPage = () => {
   });
 
   const [amount, setAmount] = React.useState(0);
+  
   const handleSubit2 = () => {
     posting.mutate({
       amount,
     });
+
+    reset();
+
     Swal.fire({
       title: "withdrawal successful",
       icon: "success",
+      
     }).catch((err) => {
       Swal.fire({
         title: "an error occured",
@@ -133,7 +138,6 @@ const DashTransPage = () => {
         text: `${err.response?.data?.message}`,
       });
     });
-    reset();
   };
 
   return (
